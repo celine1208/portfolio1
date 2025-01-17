@@ -16,8 +16,8 @@
 /* 슬라이더 */
 #slider {
     position:relative;
-    margin: 100px 70px 0 70px;
-    width: 92vw; height: 740px;
+    margin: 100px 4vw 0 4vw;
+    /* width: 92vw; height: 740px; */
     border-radius: 20px;
     overflow: hidden;
 }
@@ -311,7 +311,7 @@
     display: flex; flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../images/locationBg.png) no-repeat center /cover;
+    background: linear-gradient(rgb(0,0,0,0.1),rgb(0,0,0,0.5)) url(../images/locationBg.png) no-repeat center /cover;
 }
 
 #location h2 {
