@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gcova</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/webfont.css">
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/common.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="#">Gcova</a></h1>
+        <!-- Navigation Bar -->
+        <nav id="gnb">
+            <h2 class="hidden">지코바 이용메뉴</h2>
+            <ul id="gnbList">
+                <li>
+                    <a href="#">회사소개</a>
+                    <ul id="snb1" class="snb">
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">회사연혁</a></li>
+                        <li><a href="#">주요시설</a></li>
+                        <li><a href="#">오시는길</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">브랜드소개</a>
+                    <ul id="snb2" class="snb">
+                        <li><a href="#">심벌마크</a></li>
+                        <li><a href="#">캐릭터</a></li>
+                        <li><a href="#">아이콘</a></li>
+                        <li><a href="#">차량간판</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">메뉴소개</a>
+                    <ul id="snb3" class="snb">
+                        <li><a href="#">추천메뉴</a></li>
+                        <li><a href="#">윙</a></li>
+                        <li><a href="#">순살</a></li>
+                        <li><a href="#">스틱</a></li>
+                        <li><a href="#">양념치킨</a></li>
+                        <li><a href="#">소금구이</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">가맹안내</a>
+                    <ul id="snb4" class="snb">
+                        <li><a href="#">개설절차</a></li>
+                        <li><a href="#">지역별상담</a></li>
+                        <li><a href="#">상담신청</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">가게위치</a>
+                    <ul id="snb5" class="snb">
+                        <li><a href="#">지사안내</a></li>
+                        <li><a href="#">매장안내</a></li>
+                        <li><a href="#">신규매장</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Pageup -->
+        <a href="#" id="pageTop" title="상단 화면으로 이동">상단 화면으로 이동</a>
+    <!-- Slider -->
+    <section id="slider">
+        <h2 class="hidden">이벤트 및 메뉴소개</h2>
+        <ul id="slideList">
+            <!-- slide 1 -->
+            <li class="slide1">
+                <strong>30주년 지코바 축제 <br> 최대 30% 할인 이벤트!</strong>
+                <p>지난 30년 동안 저희 지코바를 사랑해주셔서 감사합니다. <br>
+                    여러분의 믿음과 응원 덕분에 오늘의 지코바가 있었습니다. <br>
+                    앞으로도 더 많은 사랑을 받을 수 있도록 최선을 다하겠습니다</p>
+                <video src="./images/video01.mp4" autoplay muted loop playsinline></video>
+                <div id="goBtn">
+                    <a href="#">이벤트 참여하기</a>
+                </div>
+            </li>
+            <!-- slide 2 -->
+            <li class="slide2">
+                <strong>지코바’s PICK <br>
+                    매콤 순살 양념구이</strong>
+                <p>30년 넘게 사랑받아온 지코바의 비결,<br>
+                    깊고 부드러운 순살에 지코바 레시피를 더하다. <br>
+                    그 특별한 소스의 매력을 한층 더 느껴보세요</p>
+                    <video src="./images/video02.mp4" autoplay muted loop playsinline></video>
+                <div id="goBtn">
+                    <a href="#">메뉴보기</a>
+                    <a href="#">매장찾기</a>
+                </div>
+            </li>
+            <!-- slide 3 -->
+            <li class="slide3">
+                <strong>지코바 2025 새해 이벤트 <br>
+                    첫주문 4000원 할인!</strong>
+                <p>지코바 치킨이 처음이라면? <br>
+                    쿠팡이츠 첫 주문 고객 대상 4000원 할인쿠폰 발급 혜택! <br>
+                    새해맞이 웰컴쿠폰으로 부담없이 지코바를 즐겨보세요.</p>
+                    <video src="./images/video03.mp4" autoplay muted loop playsinline></video>
+                <div id="goBtn">
+                    <a href="#">메뉴보기</a>
+                    <a href="#">매장찾기</a>
+                </div>
+            </li>
+        </ul>
+        <!-- Pagination -->
+        <div id="pagination">
+            <p id="pageNum">01</p>
+            <div id="btnGroup">
+                <a href="#" class="prevBtn">이전 슬라이드로 이동</a>
+                <a href="#" class="nextBtn">다음 슬라이드로 이동</a>
+            </div>
+            <div id="btnBarGroup">
+                <div id="btnBarBg"></div>
+                <div id="btnBar"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu -->
+    <section id="menu">
+        <h2>지코바에서 가장 사랑받은 메뉴</h2>
+        <p>정직한 맛으로 사랑받는 지코바가 되겠습니다. </p>
+        <ul id="menuList">
+            <!-- menu 1 -->
+            <li id="menu1">
+                <figure>
+                    <img src="./images/menu01.png" alt="gcovaWing">
+                    <figcaption>지코바 윙</figcaption>
+                </figure>
+            </li>
+            <!-- menu 2 -->
+            <li id="menu2">
+                <figure>
+                    <img src="./images/menu02.png" alt="gcovaSalt">
+                    <figcaption>지코바 소금구이</figcaption>
+                </figure>
+            </li>
+            <!-- menu 3 -->
+            <li id="menu3">
+                <figure>
+                    <img src="./images/menu03.png" alt="gcovaSauce">
+                    <figcaption>지코바 양념치킨</figcaption>
+                </figure>
+            </li>
+            <!-- menu 4 -->
+            <li id="menu4">
+                <figure>
+                    <img src="./images/menu04.png" alt="gcovaSunsal">
+                    <figcaption>지코바 순살</figcaption>
+                </figure>
+            </li>
+            <!-- menu 5 -->
+            <li id="menu5">
+                <figure>
+                    <img src="./images/menu05.png" alt="gcovaStick">
+                    <figcaption>지코바 스틱</figcaption>
+                </figure>
+            </li>
+        </ul>
+    </section>
+    <section id="brand">
+        <h2>지코바 브랜드이야기</h2>
+        <p>지속가능한 미래를 위해 건강과 행복을 나누는 지코바의 이야기</p>
+        <ul id="brandList">
+            <li class="brand1">
+                <dl>
+                    <dt>Customer</dt>
+                    <dd>고객만족을 최우선으로 생각합니다.</dd>
+                </dl>
+            </li>
+            <li class="brand2">
+                <dl>
+                    <dt>Quality</dt>
+                    <dd>신선하고 안전한 먹거리를 만듭니다.</dd>
+                </dl>
+            </li>
+            <li class="brand3">
+                <dl>
+                    <dt>Branding</dt>
+                    <dd>새롭게 리뉴얼한 지코바를 만나보세요.</dd>
+                </dl>
+            </li>
+            <li class="brand4">
+                <dl>
+                    <dt>Recipe</dt>
+                    <dd>지코바의 레시피 개발연구는 계속됩니다.</dd>
+                </dl>
+            </li>
+        </ul>
+    </section>
+    <!-- franchise -->
+    <section id="franchise">
+        <h2>지코바 창업방법</h2>
+        <p>상생 발전을 위한 최고의 협력 파트너가 되겠습니다.</p>
+        <a href="#">창업방법 자세히 보기</a>
+             <!-- 스크롤시 핸드폰 화면 고정 내용 슬라이드업 -->
+        <dl>
+            <dt>무경험자도 창업이 가능한가요?</dt>
+            <dd>간단한 조리법으로 무경험자도 충분히 가능합니다</dd>
+            <dt>운영 지원에는 어떤 것들이 있나요?</dt>
+            <dd>빠른 소통이 가능한 담당 슈퍼바이저를 배정드립니다.</dd>
+            <dt>창업 비용은 어떻게 되나요?</dt>
+            <dd>자세한 사항은 지금 바로 지코바로 연락주세요!</dd>
+        </dl>
+    </section>
+    <!-- location -->
+    <section id="location">
+        <h2>지코바 매장찾기</h2>
+        <p>지금 바로 가까운 지코바 매장을 찾아보세요.</p>
+        <a href="#" title="매장찾기 바로가기">search bar</a>
+    </section>
+    <!-- footer -->
+    <footer>
+        <p><a href="#">개인정보처리방침</a></p>
+        <p><a href="#">이용약관</a></p>
+        <p><a href="#">사이트맵</a></p>
+        <div>
+            <p>(주) 지코바</p>
+            <p>대표자: 구민</p>
+            <p>사업자등록번호: 200-80-300013</p>
+            <p>대표전화: 055-363-9300</p>
+        </div>
+        <p>주소: 경상남도 양산시 어곡공단3길 32 (주)지코바</p>
+        <small>ⓒ 2025 gcova.co.kr All rights Reserved.</small>
+    </footer>
+</body>
+</html>
