@@ -2,8 +2,9 @@
 
 /* 상단 화면 이동버튼 */
 #pageTop {
+    z-index: 999;
     position: fixed;
-    top: 900px; right: 50px;
+    bottom: 100px; right: 20px;
     width: 50px; height: 50px;
     background: url(../images/pageup.png) no-repeat center /cover;
     text-indent: -1000%;
@@ -15,15 +16,15 @@
 /* 슬라이더 */
 #slider {
     position:relative;
-    margin: 20px auto 0;
-    width: 1780px; height: 740px;
+    margin: 100px 70px 0 70px;
+    width: 92vw; height: 740px;
     border-radius: 20px;
     overflow: hidden;
 }
 
 #slideList {
     display: flex;
-    width: 5340px;
+    width: 276vw;
 }
 
 /* 슬라이드 공통 */
@@ -32,12 +33,11 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 1780px; height: 740px;
+    width: 92vw; height: 740px;
 }
 
 /* 슬라이드 타이틀 공통*/
 #slideList li strong {
-    width: 710px;
     display: block;
     margin: 160px 0 0 50px;
     font-size: 48px;
@@ -49,7 +49,6 @@
 
 /* 슬라이드 내용 공통 */
 #slideList li p {
-    width: 710px;
     display: block;
     margin: 40px 0 0 50px;
     font-size: 18px;
@@ -82,7 +81,9 @@
 
 /* 슬라이드 비디오 공통 */
 #slideList li video {
-    width: 1070px; height: 740px;
+    position: absolute;
+    top:0; right: 0;
+    width: 56vw; height: 740px;
     object-fit: cover;
 }
 
