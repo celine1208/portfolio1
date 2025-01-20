@@ -7,20 +7,7 @@ $('#gnb').on('mouseleave', function(){
     $('#header').stop().animate({height: 100}, 300);
 });
 
-// $('#gnbList > li > a').on('mouseenter', function(){
-//     $(this).addClass('active')
-//            .css({borderBottom: '2px solid #B90B0B'});
-// });
-
-// $('#gnbList > li > a').on('mouseleave', function(){
-//     $(this).removeClass('active');
-//     $('#gnbList > li > a').css({borderBottom: '2px solid #fff'})
-// });
-
-// $('#gnbList .snb li a').on('mouseenter', function(){
-//     $(this).addClass('active')
-// });
-
-// $('#gnbList .snb li a').on('mouseleave', function(){
-//     $(this).removeClass('active');
-// });
+// 브랜드이야기 호버효과
+$('brandList li').on('onclick', function(){
+    $(this).find('div').stop().fadeIn(300);
+});
