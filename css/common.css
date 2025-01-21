@@ -55,18 +55,30 @@ body {
 #gnbList {
     text-align: center;
     display: flex;
+    gap: 80px
 }
 
 #gnbList > li > a {
+    position: relative;
     width: 100%;
-    padding: 40px 40px 38px 40px;
+    margin: 40px 0 20px 0;
     display:block;
     font-size: 18px;
-    border-bottom: 2px solid #fff;
-    transition: 0.5s;
+    padding-bottom: 20px;
 }
 
-#gnbList > li:hover > a { border-bottom: 2px solid #B90B0B;}
+#gnbList > li > a::before {
+    position: absolute;
+    bottom: 0; left: 0;
+    content: '';
+    display: block;
+    width: 0; height: 2px;
+    background: #B90B0B;
+    transition: 0.3s;
+}
+#gnbList > li > a:hover::before {
+    width: 100%;
+}
 
 /* 상세메뉴 */
 #gnbList li .snb {
@@ -74,51 +86,36 @@ body {
     background: #fff;
 }
 
-#gnbList .snb > li > a {
+.snb > li > a {
     display: block;
     font-size: 16px;
     line-height: 40px;
+    transition: 0.3s;
 }
 
-.snb > li > a:hover
-
-
-/* #gnbList > li > a 에 마우스 호버 */
-.active {
-    color: #B90B0B;
-}
+.snb > li > a:hover { color: #B90B0B; }
 
 /* footer */
-
-
 #footer {
+    padding: 0 12vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    height: 300px;
+    flex-flow: column nowrap; gap: 20px;
+    justify-content: center; align-items: start;
+    width: 100%; height: 300px;
     background: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.8)), url(../images/locationBg.png) repeat-x bottom / 1920px;
 }
+
 @media screen and (min-width: 1921px) {
     #footer {
         background-size: 100%;
     }
 }
 
-#footer .info {
-    background: #000;
-    text-align: center;
-    /* width: 100%; */
-    position: relative;
-    
-}
-
-#footer .info a { padding-left: 20px; }
+#footer p, #footer a { color: #fff; }
+#footer .companyInfo { display: flex; }
+#footer .companyInfo p:not(:last-child) {padding-right: 40px;}
+#footer .info a:not(:first-child) {padding-left: 20px;}
 #footer .info a:not(:last-child) {
     padding-right: 20px;
-    border-right:2px solid #fff;
+    border-right:1px solid #fff;
 }
-
-
-
-#footer p, #footer a, #footer small { color: #fff; }

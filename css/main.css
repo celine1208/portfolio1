@@ -62,21 +62,36 @@
     gap: 40px;
 }
 #goBtn a {
+    position: relative;
     display: block;
-    width: 140px; height: 40px;
-    padding: 10px 20px;
+    width: 180px; height: 60px;
     font-size: 18px;
     color: #fff;
-    text-align: center;
     border-radius: 10px;
     border: 2px solid #fff;
+    text-align: center;
+    line-height: 60px;
+    background: transparent;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    z-index: 1;
 }
 
-/* 슬라이드 1 버튼 */
-#slideList li.slide1 a {
-    width: 180px; height: 40px;
-    color: #fff;
-}
+#goBtn a:hover { color: #B90B0B; }
+
+#goBtn a::before {
+    content: '';
+    width: 0; height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    top: 0; left: 0;
+    transition: all .7s cubic-bezier(0.7, 0, 0.2, 1);
+    box-shadow:2px 0px 15px rgb(255, 255, 255, 0.8);
+    z-index: -1;
+  }
+
+#goBtn a:hover::before { width: 120%; }
 
 /* 슬라이드 비디오 공통 */
 #slideList li video {
@@ -88,8 +103,8 @@
 
 /* 슬라이드 배경 */
 #slideList li.slide1 { background: #B90B0B; }
-#slideList li.slide2 {background: #FF6E00;}
-#slideList li.slide3 {background: #B90B0B;}
+#slideList li.slide2 { background: #FF6E00;}
+#slideList li.slide3 { background: #B90B0B;}
 
 /* 슬라이드 현재 번호 */
 #pageNum {
@@ -160,6 +175,14 @@
     margin-top: 70px;
 }
 
+#menuList li figure img {
+    transition: 0.5s;
+}
+
+#menuList li figure img:hover {
+    transform: rotate(20deg);
+}
+
 #menuList li figure figcaption  {
     margin: 40px 0 160px 0;
     font-family: 'S-CoreDream-4Regular';
@@ -171,7 +194,7 @@
 
 /* 브랜드스토리 */
 #brand {
-    margin: 160px 70px;
+    margin: 160px 4vw 0;
 }
 
 #brand h2 {
@@ -187,7 +210,6 @@
     font-weight: normal;
     font-style: normal;
     font-size: 20px;
-    /* text-align: center; */
 }
 
 #brandList {
@@ -200,7 +222,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 400px; height: 490px; */
     width: 22vw; height: 28vw;
     background: no-repeat center /cover;
     text-align: center;
@@ -240,7 +261,7 @@
 /* 창업방법 */
 
 #franchise {
-    padding: 160px 0 0 70px;
+    margin: 320px 4vw 0 4vw;
     position: relative;
     height: 800px;
 }
@@ -260,7 +281,9 @@
     font-size: 20px;
 }
 
+/* 창업방법 자세히 보기 버튼 */
 #franchise a {
+    position: relative;
     margin-top: 40px;
     display: block;
     width: 240px; height: 60px;
@@ -269,16 +292,47 @@
     font-size: 18px;
     text-align: center;
     line-height: 56px;
+    background: transparent;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+}
+
+#franchise a:hover{
+    color: #fff;
+}
+
+#franchise a::before {
+    content: '';
+    width: 0; height: 100%;
+    display: block;
+    background: #B90B0B;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
+    box-shadow:2px 0px 15px rgba(0,0,0,.8);
+  }
+
+
+#franchise a:hover::before {
+  width: 120%;
 }
 
 #franchise dl {
     position: absolute;
-    top: 160px; right: 70px;
+    top: 0px; right: 4vw;
     overflow: hidden;
     padding-top: 120px;
     width: 800px; height: 800px;
     margin-left: 800px;
     background: url(../images/iphone.png) no-repeat center /cover;
+}
+
+@media screen and (max-width: 1920px) {
+    #franchise dl {
+        width: 600px; height: 600px;
+    }
+    
 }
 
 #franchise dl dt {
@@ -311,12 +365,11 @@
 }
 
 #location {
-    margin-top: 160px;
     width: 100%; height: 800px;
     display: flex; flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgb(0,0,0,0.1),rgb(0,0,0,0.5)) url(../images/locationBg.png) no-repeat center /cover;
+    background: linear-gradient(rgb(0,0,0,0.1),rgb(0,0,0,0.5)), url(../images/locationBg.png) no-repeat center /cover;
 }
 
 #location h2 {
@@ -341,6 +394,5 @@
     display: block;
     margin-top: 50px;
     width: 800px; height: 40px;
-    background: #fff;
     border-radius: 20px;
 }
