@@ -56,6 +56,19 @@
     color: #fff;
 }
 
+/* 슬라이드 비디오 공통 */
+#slideList li video {
+    position: absolute;
+    top:0; right: 0;
+    width: 56vw; height: 740px;
+    object-fit: cover;
+}
+
+/* 슬라이드 개별 배경 */
+#slideList li.slide1 { background: #B90B0B; }
+#slideList li.slide2 { background: #FF6E00;}
+#slideList li.slide3 { background: #B90B0B;}
+
 /* 슬라이드 버튼 공통 */
 #goBtn {
     position: absolute;
@@ -78,9 +91,7 @@
     transition: all .5s ease-in-out;
     z-index: 1;
 }
-
 #goBtn a:hover { color: #B90B0B; }
-
 #goBtn a::before {
     content: '';
     width: 0; height: 100%;
@@ -92,21 +103,7 @@
     box-shadow:2px 0px 15px rgb(255, 255, 255, 0.8);
     z-index: -1;
   }
-
 #goBtn a:hover::before { width: 120%; }
-
-/* 슬라이드 비디오 공통 */
-#slideList li video {
-    position: absolute;
-    top:0; right: 0;
-    width: 56vw; height: 740px;
-    object-fit: cover;
-}
-
-/* 슬라이드 배경 */
-#slideList li.slide1 { background: #B90B0B; }
-#slideList li.slide2 { background: #FF6E00;}
-#slideList li.slide3 { background: #B90B0B;}
 
 /* 슬라이드 현재 번호 */
 #pageNum {
@@ -152,13 +149,10 @@
     width: 300px; height: 3px;
     background: #ffa5a5c0;
 }
-
 #pageNum {z-index: 2;}
 
-/* 메뉴 */
-
+/* 지코바 메뉴 */
 #menu {margin-top: 160px;}
-
 #menu h2{
     font-family: 'JalnanGothic';
     font-weight: normal;
@@ -166,7 +160,6 @@
     font-size: 2.5vw;
     text-align: center;
 }
-
 #menu p {
     margin-top: 12px;
     font-family: 'S-CoreDream-3Light';
@@ -175,21 +168,17 @@
     font-size: 1.2vw;
     text-align: center;
 }
-
 #menuList {
     display: flex;
     justify-content: center;
     margin-top: 70px;
 }
-
 #menuList li figure img {
     transition: 0.5s;
 }
-
 #menuList li figure img:hover {
     transform: rotate(20deg);
 }
-
 #menuList li figure figcaption  {
     margin: 40px 0 160px 0;
     font-family: 'S-CoreDream-4Regular';
@@ -204,14 +193,12 @@
     position: relative;
     margin: 160px 4vw 0;
 }
-
 #brand h2 {
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
     font-size: 2.5vw;
 }
-
 #brand p {
     margin-top: 12px;
     font-family: 'S-CoreDream-3Light';
@@ -219,7 +206,7 @@
     font-style: normal;
     font-size: 1.2vw;
 }
-
+/* 브랜드 스토리 자세히보기 버튼 */
 #brand a {
     position: absolute;
     top:30px; right: 0;
@@ -234,11 +221,9 @@
     overflow: hidden;
     transition: all .5s ease-in-out;
 }
-
 #brand a:hover{
     color: #fff;
 }
-
 #brand a::before {
     display: block;
     content: '';
@@ -250,17 +235,16 @@
     transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
     box-shadow:2px 0px 15px rgba(0,0,0,.8);
 }
-
 #brand a:hover::before {
     width: 120%;
-  }
+}
 
+/* 브랜드스토리 카드 */
 #brandList {
     margin-top: 70px;
     display: flex;
     justify-content: space-between;
 }
-
 #brandList li {
     display: flex;
     justify-content: center;
@@ -270,13 +254,12 @@
     text-align: center;
     border-radius: 20px;
 }
-
 #brandList li dl dd { opacity: 0; transition: 0.5s;}
 #brandList li dl dt {transition: 0.5s;}
 #brandList li:hover dl dt {padding-bottom: 40px;}
 #brandList li:hover dl dd {opacity: 1;}
 
-/* 브랜드 카드 배경 */
+/* 브랜드스토리 카드 배경 */
 #brandList li.brand1 {background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5)), url(../images/brand01.png);}
 #brandList li.brand2 {background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5)), url(../images/brand02.png);}
 #brandList li.brand3 {background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5)), url(../images/brand03.png);}
@@ -291,7 +274,6 @@
     color: #fff;
     text-transform: uppercase;
 }
-
 #brandList li dl dd {
     margin-top: 20px;
     font-family: 'S-CoreDream-3Light';
@@ -307,20 +289,52 @@
     position: relative;
     height: 800px;
 }
-
 #franchise h2 {
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
     font-size: 2.5vw;
 }
-
 #franchise > p {
     margin-top: 12px;
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
     font-size: 1.2vw;
+}
+
+/* 창업방법 자세히 보기 버튼 */
+#franchise { overflow: hidden;}
+#franchise a {
+    position: relative;
+    margin-top: 40px;
+    display: block;
+    width: 12.5vw; height: 60px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 1vw;
+    text-align: center;
+    line-height: 56px;
+    background: transparent;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+}
+#franchise a:hover{
+    color: #fff;
+}
+#franchise a::before {
+    content: '';
+    width: 0; height: 100%;
+    display: block;
+    background: #B90B0B;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
+    box-shadow:2px 0px 15px rgba(0,0,0,.8);
+}
+#franchise a:hover::before {
+  width: 120%;
 }
 
 /* 꼬꼬닭 */
@@ -339,7 +353,6 @@
     font-style: normal;
     font-size: 2.5vw;
 }
-
 #characterLogo div {
     position: absolute;
     top: 145px;
@@ -347,11 +360,8 @@
     border-radius: 50%;
     width: 50px; height: 50px;
 }
-
 #characterLogo div.eye1 { left: 33px; }
 #characterLogo div.eye2 { left: 114px; }
-
-
 #characterLogo span {
     position: absolute;
     top: 28px; left: 6px;
@@ -359,45 +369,6 @@
     background:#000;
     width: 28px; height: 28px;
     border-radius: 50%;
-}
-
-/* 창업방법 자세히 보기 버튼 */
-
-#franchise { overflow: hidden;}
-#franchise a {
-    position: relative;
-    margin-top: 40px;
-    display: block;
-    width: 12.5vw; height: 60px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    font-size: 1vw;
-    text-align: center;
-    line-height: 56px;
-    background: transparent;
-    overflow: hidden;
-    transition: all .5s ease-in-out;
-}
-
-#franchise a:hover{
-    color: #fff;
-}
-
-#franchise a::before {
-    content: '';
-    width: 0; height: 100%;
-    display: block;
-    background: #B90B0B;
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
-    transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
-    box-shadow:2px 0px 15px rgba(0,0,0,.8);
-}
-
-
-#franchise a:hover::before {
-  width: 120%;
 }
 
 /* 아이폰 */
@@ -408,34 +379,27 @@
     width: 770px; height: 1600px;
     background: url(../images/iphone.png) no-repeat center / cover;
 }
-
 @media screen and (max-width: 1920px) {
     #franchise dl {
         width: 600px; height: 600px;
     }
-    
 }
-
 #faq dl {
     position: absolute;
     top: 160px; left: 85px;
     width: 600px; height: 1000px;
     font-size: 1vw;
 }
-
 #faq dl dt, #faq dl dd {
         border-radius: 15px;
         background: #ededed;
 }
-
 #faq dl dt {
     height: 80px;
     text-align: center;
     margin-bottom: 150px;
     line-height: 80px;
 }
-
-
 #faq dl dd {
     margin-top: -115px;
     position: absolute;
@@ -448,11 +412,9 @@
     color: #fff;
 }
 
-
 #franchise dl .q1 { width: 17vw; }
 #franchise dl .q2 { width: 18.5vw; }
 #franchise dl .q3 { width: 15vw; }
-
 #franchise dl .a1 { width: 24vw;}
 #franchise dl .a2 { width: 25.5vw;}
 #franchise dl .a3 { width: 22.5vw;}
@@ -466,7 +428,6 @@
     align-items: center;
     background: linear-gradient(rgb(0,0,0,0.1),rgb(0,0,0,0.5)), url(../images/locationBg.png) no-repeat center /cover;
 }
-
 #location h2 {
     font-family: 'JalnanGothic';
     font-weight: normal;
@@ -474,7 +435,6 @@
     font-size: 48px;
     color: #fff;
 }
-
 #location p {
     margin-top: 12px;
     font-family: 'S-CoreDream-3Light';
@@ -483,13 +443,12 @@
     font-size: 20px;
     color: #fff;
 }
-
 #location a {
     position: relative;
     text-indent: -100%;
     display: block;
     margin-top: 50px;
-    width: 42vw; height: 40px;
+    width: 42vw; height: 80px;
     border-radius: 20px;
     background: #fff;
 }
