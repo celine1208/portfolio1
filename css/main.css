@@ -17,7 +17,7 @@
     position:relative;
     margin: 100px 4vw 0 4vw;
     width: 92vw; height: 740px;
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
     overflow: hidden;
 }
 
@@ -33,13 +33,15 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 92vw; height: 740px;
+    /* opacity: 0; */
 }
+.active { z-index: 1; }
 
 /* 슬라이드 타이틀 공통*/
 #slideList li strong {
     display: block;
     margin: 160px 0 0 50px;
-    font-size: 48px;
+    font-size: 2.5vw;
     color: #fff;
     font-family: 'JalnanGothic';
     font-weight: normal;
@@ -50,7 +52,7 @@
 #slideList li p {
     display: block;
     margin: 40px 0 0 50px;
-    font-size: 18px;
+    font-size: 1vw;
     color: #fff;
 }
 
@@ -64,8 +66,8 @@
 #goBtn a {
     position: relative;
     display: block;
-    width: 180px; height: 60px;
-    font-size: 18px;
+    width: 9.4vw; height: 60px;
+    font-size: 1vw;
     color: #fff;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -110,13 +112,14 @@
 #pageNum {
     position: absolute;
     top: 448px; left: 50px;
-    font-size: 24px;
+    font-size: 1.5vw;
     font-family: 'S-CoreDream-3Light';
     color:#fff;
 }
 
 /* 슬라이드 좌우 버튼 */
 #btnGroup a {
+    z-index: 2;
     display: block;
     text-indent: -1000%;
     white-space: nowrap;
@@ -136,17 +139,21 @@
 
 /* 슬라이드 바 */
 #btnBar {
+    z-index: 1;
     position: absolute;
     top: 460px; left: 105px;
     width: 100px; height: 3px;
     background: #fff;
 }
 #btnBarBg {
+    z-index: 1;
     position: absolute;
     top: 460px; left: 105px;
     width: 300px; height: 3px;
     background: #ffa5a5c0;
 }
+
+#pageNum {z-index: 2;}
 
 /* 메뉴 */
 
@@ -156,7 +163,7 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 48px;
+    font-size: 2.5vw;
     text-align: center;
 }
 
@@ -165,7 +172,7 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.2vw;
     text-align: center;
 }
 
@@ -188,12 +195,13 @@
     font-family: 'S-CoreDream-4Regular';
     font-weight: normal;
     font-style: normal;
-    font-size: 22px;
+    font-size: 1.2vw;
     text-align: center;
 }
 
 /* 브랜드스토리 */
 #brand {
+    position: relative;
     margin: 160px 4vw 0;
 }
 
@@ -201,7 +209,7 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 48px;
+    font-size: 2.5vw;
 }
 
 #brand p {
@@ -209,8 +217,43 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.2vw;
 }
+
+#brand a {
+    position: absolute;
+    top:30px; right: 0;
+    display: block;
+    width: 12.5vw; height: 60px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 1vw;
+    text-align: center;
+    line-height: 56px;
+    background: transparent;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+}
+
+#brand a:hover{
+    color: #fff;
+}
+
+#brand a::before {
+    display: block;
+    content: '';
+    width: 0; height: 100%;
+    background: #B90B0B;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
+    box-shadow:2px 0px 15px rgba(0,0,0,.8);
+}
+
+#brand a:hover::before {
+    width: 120%;
+  }
 
 #brandList {
     margin-top: 70px;
@@ -241,10 +284,10 @@
 
 #brandList li dl dt {
     margin-top: 20px;
-    font-family: 'S-CoreDream-7ExtraBold';
+    font-family: 'S-CoreDream-6Bold';
     font-weight: normal;
     font-style: normal;
-    font-size: 30px;
+    font-size: 2vw;
     color: #fff;
     text-transform: uppercase;
 }
@@ -254,12 +297,11 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 18px;
+    font-size: 1vw;
     color:#fff;
 }
 
 /* 창업방법 */
-
 #franchise {
     margin: 320px 4vw 0 4vw;
     position: relative;
@@ -270,26 +312,66 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 48px;
+    font-size: 2.5vw;
 }
 
-#franchise p {
+#franchise > p {
     margin-top: 12px;
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.2vw;
+}
+
+/* 꼬꼬닭 */
+#characterLogo {
+    position: relative;
+    margin: 330px 0 0 200px;
+    width: 600px; height: 260px;
+    background: url(../images/kkokko.png) no-repeat left bottom;
+}
+#characterLogo p {
+    display: block;
+    position: absolute;
+    top:20px; left: 10vw;
+    font-family: 'KCCHyerim-Regular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.5vw;
+}
+
+#characterLogo div {
+    position: absolute;
+    top: 145px;
+    display: flex;
+    border-radius: 50%;
+    width: 50px; height: 50px;
+}
+
+#characterLogo div.eye1 { left: 33px; }
+#characterLogo div.eye2 { left: 114px; }
+
+
+#characterLogo span {
+    position: absolute;
+    top: 28px; left: 6px;
+    display: block;
+    background:#000;
+    width: 28px; height: 28px;
+    border-radius: 50%;
 }
 
 /* 창업방법 자세히 보기 버튼 */
+
+#franchise { overflow: hidden;}
 #franchise a {
     position: relative;
     margin-top: 40px;
     display: block;
-    width: 240px; height: 60px;
+    width: 12.5vw; height: 60px;
     border: 2px solid #000;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 1vw;
     text-align: center;
     line-height: 56px;
     background: transparent;
@@ -311,21 +393,20 @@
     z-index: -1;
     transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
     box-shadow:2px 0px 15px rgba(0,0,0,.8);
-  }
+}
 
 
 #franchise a:hover::before {
   width: 120%;
 }
 
-#franchise dl {
+/* 아이폰 */
+#faq {
+    transition: 1s linear;
     position: absolute;
-    top: 0px; right: 4vw;
-    overflow: hidden;
-    padding-top: 120px;
-    width: 800px; height: 800px;
-    margin-left: 800px;
-    background: url(../images/iphone.png) no-repeat center /cover;
+    bottom:-1200px; right: 4vw;
+    width: 770px; height: 1600px;
+    background: url(../images/iphone.png) no-repeat center / cover;
 }
 
 @media screen and (max-width: 1920px) {
@@ -335,35 +416,49 @@
     
 }
 
-#franchise dl dt {
-    width: 400px;
-    margin-left: 100px;
-    margin-top: 80px;
-    padding: 20px 30px;
-    font-family: 'S-CoreDream-4Regular';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 22px;
-    text-align: center;
-    background: #ededed;
-    border-radius: 15px;
+#faq dl {
+    position: absolute;
+    top: 160px; left: 85px;
+    width: 600px; height: 1000px;
+    font-size: 1vw;
 }
 
-#franchise dl dd {
-    width: 600px;
-    margin-left: 100px;
-    margin-top: 80px;
-    padding: 20px 30px;
-    font-family: 'S-CoreDream-4Regular';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 22px;
+#faq dl dt, #faq dl dd {
+        border-radius: 15px;
+        background: #ededed;
+}
+
+#faq dl dt {
+    height: 80px;
     text-align: center;
+    margin-bottom: 150px;
+    line-height: 80px;
+}
+
+
+#faq dl dd {
+    margin-top: -115px;
+    position: absolute;
+    right: 0;
+    height: 80px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 80px;
     background: #B90B0B;
-    border-radius: 15px;
     color: #fff;
 }
 
+
+#franchise dl .q1 { width: 17vw; }
+#franchise dl .q2 { width: 18.5vw; }
+#franchise dl .q3 { width: 15vw; }
+
+#franchise dl .a1 { width: 24vw;}
+#franchise dl .a2 { width: 25.5vw;}
+#franchise dl .a3 { width: 22.5vw;}
+
+
+/* 매장찾기 */
 #location {
     width: 100%; height: 800px;
     display: flex; flex-direction: column;
@@ -390,9 +485,22 @@
 }
 
 #location a {
+    position: relative;
     text-indent: -100%;
     display: block;
     margin-top: 50px;
-    width: 800px; height: 40px;
+    width: 42vw; height: 40px;
     border-radius: 20px;
+    background: #fff;
+}
+#location a::after {
+    position: absolute;
+    top:5px; right: 10px;
+    content: '';
+    display: block;
+    width: 30px; height: 30px;
+    font-family: 'S-CoreDream-4Regular';
+    font-weight: normal;
+    font-style: normal;
+    background: url(../images/searchIcon.png) no-repeat center /cover;
 }
