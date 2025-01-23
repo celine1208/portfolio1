@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 /* 초기화 */
+html {font-size: 10px;}
 * {box-sizing: border-box;}
 body, h1, h2, h3, ul, p, dl, dt, dd { margin: 0; padding: 0;}
 ul, li {list-style: none;}
@@ -33,38 +34,38 @@ body {
 }
 
 /* 로고 */
-/* #header h1 {
+#header h1 {
     position: absolute;
-    top: 20px; left: 100px;
+    top: 30px; left: 4vw;
     text-indent: -1000%;
     white-space: nowrap;
     overflow: hidden;
 }
 #header h1 a {
     display: block;
-    width: 132px; height: 48px;
-    background: url(../images/gcova_logo.png) no-repeat;
-} */
+    width: 90px; height: 32px;
+    background: url(../images/gcova_logo.png) no-repeat center / cover;
+}
 
 /* 네비바 */
-/* #gnb {
+#gnb {
     height: 350px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
 }
 #gnbList {
+    margin-right: 4vw;
     text-align: center;
     display: flex;
-    gap: 80px
-} */
+    gap: 40px
+}
 
 #gnbList > li > a {
     position: relative;
     width: 100%;
-    margin: 40px 0 20px 0;
+    margin: 40px 0 40px 0;
     display: block;
-    font-size: 1vw;
-    padding-bottom: 20px;
+    font-size: 1.8rem;
 }
 #gnbList > li > a::before {
     position: absolute;
@@ -86,69 +87,20 @@ body {
 }
 #gnbList li .snb > li > a {
     display: block;
-    font-size: 1vw;
+    font-size: 1.8rem;
     line-height: 40px;
     transition: 0.3s;
 }
 .snb > li > a:hover { color: #B90B0B; }
 
 /* 모바일 */
-#header a.mobileBtn { display: none; }
-#gnbList a.mobileClose { display: none; }
+#gnb a.mobileBtn { display: none; }
+#gnb a.mobileClose { display: none; }
 #header.mobile {right:0;}
 
 /* 태블릿 */
 @media screen and (min-width: 431px){
 
-    #header a.mobileBtn {
-        z-index: 99;
-        position: absolute;
-        top: 20px; right: 4vw;
-        display: block;
-        width: 30px; height: 30px;
-        text-indent: -1000%;
-        white-space: nowrap;
-        overflow: hidden;
-        background: url(../images/mobileBtn.png) no-repeat center / cover;
-    }
-    #gnbList a.mobileClose {
-        position: absolute;
-        top: 20px; right: 4vw;
-        display: block;
-        text-indent: -1000%;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 30px; height: 30px;
-        background: url(../images/close.png) no-repeat center /cover;
-    }
-
-    #header h1 {
-        position: absolute;
-        top: 20px; left: 4vw;
-        text-indent: -1000%;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    #header h1 a {
-        display: block;
-        width: 90px; height: 32px;
-        background: url(../images/gcova_logo.png) no-repeat center / cover;
-    }
-    #gnbList {
-        margin-right: 14vw;
-        display: flex;
-        text-align: center;
-        justify-content: end;
-        gap: 30px;
-    }
-    #gnbList > li > a {
-        margin: 25px 0;
-        font-size: 18px;
-    }
-    #gnbList li .snb > li > a {
-        font-size: 16px;
-    }
 }
 
 /* 데스크탑 */
@@ -158,22 +110,12 @@ body {
         display: flex;
         justify-content: center;
     }
-    #gnbList {
-        text-align: center;
-        display: flex;
-        gap: 80px
-    }
-    #header h1 {
-        position: absolute;
-        top: 20px; left: 100px;
-        text-indent: -1000%;
-        white-space: nowrap;
-        overflow: hidden;
-    }
+    #gnbList { gap: 80px }
+
+    #header h1 { top:20px; }
+
     #header h1 a {
-        display: block;
         width: 132px; height: 48px;
-        background: url(../images/gcova_logo.png) no-repeat;
     }
     #gnbList {
         margin: 0;
@@ -187,12 +129,12 @@ body {
         width: 100%;
         margin: 40px 0 20px 0;
         display: block;
-        font-size: 1vw;
+        font-size: 1.8rem;
         padding-bottom: 20px;
     }
     #gnbList li .snb > li > a {
         display: block;
-        font-size: 1vw;
+        font-size: 1.8rem;
         line-height: 40px;
         transition: 0.3s;
     }
@@ -250,10 +192,10 @@ body {
     #gnbList > li > a {
         margin-top: 100px;
         margin-bottom: 0;
-        font-size: 18px;
+        font-size: 1.8rem;
     }
     #gnbList li .snb > li > a {
-        font-size: 16px;
+        font-size: 1.8rem;
     }
 }
 
@@ -272,7 +214,7 @@ body {
         background-size: 100%;
     }
 }
-#footer p, #footer a { color: #fff; font-size: 0.8vw; }
+#footer p, #footer a { color: #fff; font-size: 1.2rem; }
 #footer .companyInfo { display: flex; }
 #footer .companyInfo p:not(:last-child) {padding-right: 40px;}
 #footer .info a:not(:first-child) {padding-left: 20px;}

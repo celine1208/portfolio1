@@ -21,7 +21,7 @@
     position: relative;
     margin: 100px 4vw 0 4vw;
     width: 92vw;
-    height: 740px;
+    height: 650px;
     border-radius: 0 0 20px 20px;
     overflow: hidden;
 }
@@ -30,13 +30,13 @@
 #slideList li {
     position: absolute;
     top: 0; left: 0;
-    width: 100%; height: 740px;
+    width: 100%; height: 650px;
     padding: 100px 40px 0 40px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-
 
 /* 슬라이드 배경 */
 #slideList li.slide1 {
@@ -49,13 +49,14 @@
 }
 
 #slideList li.slide3 {
-    background: #875901;
+    background: #fbb206;
 }
 
 /* 슬라이드 타이틀 공통*/
 #slideList li strong {
+    width: 60%;
     display: block;
-    font-size: 2.5vw;
+    font-size: 2.8rem;
     color: #fff;
     font-family: 'JalnanGothic';
     font-weight: normal;
@@ -64,32 +65,34 @@
 
 /* 슬라이드 내용 공통 */
 #slideList li p {
+    width: 60%;
     display: block;
-    font-size: 1vw;
+    font-size: 1.2rem;
     color: #fff;
 }
 
 /* 슬라이드 비디오 공통 */
 #slideList li video {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 56vw;
-    height: 740px;
-    object-fit: cover;
+    top: 340px;
+    left:0;
+    width: 100%;
+    height: 650px;
+    object-fit:cover;
 }
 
 /* 슬라이드 버튼 공통 */
 #goBtn {
-    display: flex;
-    gap: 40px;
+    height: 100%;
+    display: block;
 }
 #goBtn a {
+    margin-bottom: 20px;
     position: relative;
     display: block;
-    width: 9.4vw;
+    width: 200px;
     height: 60px;
-    font-size: 1vw;
+    font-size: 1.4rem;
     color: #fff;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -99,6 +102,7 @@
     overflow: hidden;
     transition: all .5s ease-in-out background-color;
 }
+
 #goBtn a:hover {
     color: #B90B0B;
 }
@@ -123,11 +127,9 @@
 #pagination {
     position: absolute;
     padding-left: 40px;
-    bottom: 200px;
+    bottom: 340px;
     z-index: 2;
-    width: 36vw;
     display: flex;
-    flex-wrap: wrap;
     justify-content: start;
     align-items: center;
     gap: 30px;
@@ -135,7 +137,7 @@
 
 /* 슬라이드 현재 번호 */
 #pageNum {
-    font-size: 1.5vw;
+    font-size: 1.8rem;
     font-family: 'S-CoreDream-3Light';
     color: #fff;
 }
@@ -170,13 +172,6 @@
     background: #ffa5a5c0;
 }
 
-@media screen and (max-width: 1023) {
-    
-    #btnGroup {
-        width: 100%;
-    }
-}
-
 /* ---------- 지코바 메뉴 ---------- */
 
 #menu {
@@ -189,7 +184,7 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.5vw;
+    font-size: 2.8rem;
     text-align: center;
 }
 /* 메뉴 서브타이틀 */
@@ -198,7 +193,7 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2vw;
+    font-size: 1.4rem;
     text-align: center;
 }
 /* 메뉴 종류 */
@@ -220,7 +215,7 @@
     font-family: 'S-CoreDream-4Regular';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2vw;
+    font-size: 1.4rem;
     text-align: center;
 }
 
@@ -234,7 +229,7 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.5vw;
+    font-size: 2.8rem;
 }
 /* 브랜트 서브타이틀 */
 #brand p {
@@ -242,7 +237,7 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2vw;
+    font-size: 1.4rem;
 }
 /* 브랜드 자세히보기 버튼 */
 #brand a {
@@ -254,7 +249,7 @@
     height: 60px;
     border: 2px solid #000;
     border-radius: 10px;
-    font-size: 1vw;
+    font-size: 1.4rem;
     text-align: center;
     line-height: 56px;
     background: transparent;
@@ -296,15 +291,29 @@
     text-align: center;
     border-radius: 20px;
 }
-#brandList li dl dd {
-    opacity: 0;
-    transition: 0.5s;
-}
+
 #brandList li dl dt {
+    margin-top: 20px;
+    font-family: 'S-CoreDream-6Bold';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
     transition: 0.5s;
 }
 #brandList li:hover dl dt {
     padding-bottom: 40px;
+}
+#brandList li dl dd {
+    margin-top: 20px;
+    font-family: 'S-CoreDream-3Light';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
 }
 #brandList li:hover dl dd {
     opacity: 1;
@@ -326,25 +335,6 @@
     background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../images/brand04.png);
 }
 
-#brandList li dl dt {
-    margin-top: 20px;
-    font-family: 'S-CoreDream-6Bold';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2vw;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-#brandList li dl dd {
-    margin-top: 20px;
-    font-family: 'S-CoreDream-3Light';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1vw;
-    color: #fff;
-}
-
 /* ---------- 창업방법 ---------- */
 #franchise {
     margin: 320px 4vw 0 4vw;
@@ -357,7 +347,7 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.5vw;
+    font-size: 2.8rem;
 }
 /* 창업방법 서브타이틀 */
 #franchise>p {
@@ -365,7 +355,7 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2vw;
+    font-size: 1.4rem;
 }
 
 /* 창업방법 자세히 보기 버튼 */
@@ -377,7 +367,7 @@
     height: 60px;
     border: 2px solid #000;
     border-radius: 10px;
-    font-size: 1vw;
+    font-size: 1.4rem;
     text-align: center;
     line-height: 56px;
     background: transparent;
@@ -421,7 +411,7 @@
     font-family: 'KCCHyerim-Regular';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.5vw;
+    font-size: 2.8rem;
 }
 /* 창업방법 꼬꼬닭 눈 */
 #characterLogo div {
@@ -475,11 +465,11 @@
     left: 85px;
     width: 600px;
     height: 1000px;
-    font-size: 1vw;
 }
 /* 창업방법 아이폰 내부텍스트 공통 */
 #faq dl dt,
 #faq dl dd {
+    font-size: 1.2rem;
     border-radius: 15px;
     background: #ededed;
 }
@@ -538,7 +528,7 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.5vw;
+    font-size: 2.8rem;
     color: #fff;
 }
 /* 매장찾기 서브타이틀 */
@@ -547,7 +537,7 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2vw;
+    font-size: 1.4rem;
     color: #fff;
 }
 /* 매장찾기 서치바 */
@@ -573,3 +563,76 @@
     height: 30px;
     background: url(../images/searchIcon.png) no-repeat center /cover;
 }
+
+/* ---------- 태블릿 ---------- */
+@media screen and (min-width: 431px){
+
+}
+/* ---------- 데스크탑 ---------- */
+@media screen and (min-width: 1281px) {
+
+    #slider { height: 740px; }
+    /* 슬라이드 공통 */
+    #slideList li {
+        height: 740px;
+        flex-wrap: nowrap;
+        gap: 50px; }
+
+    /* 슬라이드 비디오 공통 */
+    #slideList li video {
+        top:0;
+        height: 740px;
+    }
+    
+    /* 슬라이드 버튼 공통 */
+    #goBtn {
+        height: 60px;
+        display: flex;
+        justify-content: start;
+        gap: 40px;
+    }
+    #goBtn a {
+        margin: 0;
+        width: 9.4vw;
+    }
+    
+    /* 슬라이드 페이지네이션 */
+    #pagination {
+        width: 36vw;
+        bottom: 200px;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    /* 슬라이드 */
+    #slideList li strong { font-size: 4.8rem; }
+    #slideList li p { font-size: 1.8rem;}
+    #goBtn a {font-size: 1.8rem;}
+    #pageNum {font-size: 2.4rem; }
+
+    /* 지코바메뉴 */
+    #menu h2 {font-size: 4.8rem;}
+    #menu p {font-size: 2.2rem;}
+    #menuList li figure figcaption {font-size: 2.2rem;}
+
+    /* 브랜드스토리 */
+    #brand h2{ font-size: 4.8rem; }
+    #brand p { font-size: 2.2rem; }
+    #brand a { font-size: 1.8rem; }
+    #brandList li dl dt { font-size: 3.6rem; }
+    #brandList li dl dd { font-size: 1.8rem; }
+    
+    /* 창업방법 */
+    #franchise h2 { font-size: 4.8rem; }
+    #franchise p { font-size: 2.2rem; }
+    #franchise a { font-size: 1.8rem; }
+    #characterLogo p { font-size: 4.8rem; }
+    #faq dl dt, #faq dl dd { font-size: 1.8rem; }
+
+    /* 매장찾기 */
+    #location h2 { font-size: 4.8rem; }
+    #location p { font-size: 2.2rem; }
+}
+/* ---------- 모바일 ---------- */
+@media screen and (max-width: 430px) {}
+
