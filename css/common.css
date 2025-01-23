@@ -24,7 +24,7 @@ body {
 #header {
     position: fixed;
     top: 0; left: 0;
-    z-index: 100;
+    z-index: 100; height: 100px;
     width: 100%;
     background: #fff;
     overflow: hidden;
@@ -99,7 +99,7 @@ body {
 
 /* 태블릿 */
 @media screen and (min-width: 431px){
-    
+
     #header a.mobileBtn {
         z-index: 99;
         position: absolute;
@@ -112,6 +112,8 @@ body {
         background: url(../images/mobileBtn.png) no-repeat center / cover;
     }
     #gnbList a.mobileClose {
+        position: absolute;
+        top: 20px; right: 4vw;
         display: block;
         text-indent: -1000%;
         white-space: nowrap;
@@ -134,11 +136,18 @@ body {
         background: url(../images/gcova_logo.png) no-repeat center / cover;
     }
     #gnbList {
-        margin-right: 4vw;
+        margin-right: 14vw;
         display: flex;
         text-align: center;
         justify-content: end;
         gap: 30px;
+    }
+    #gnbList > li > a {
+        margin: 25px 0;
+        font-size: 18px;
+    }
+    #gnbList li .snb > li > a {
+        font-size: 16px;
     }
 }
 
@@ -173,6 +182,23 @@ body {
         justify-content: end;
         gap: 80px;
     }
+     #gnbList > li > a {
+        position: relative;
+        width: 100%;
+        margin: 40px 0 20px 0;
+        display: block;
+        font-size: 1vw;
+        padding-bottom: 20px;
+    }
+    #gnbList li .snb > li > a {
+        display: block;
+        font-size: 1vw;
+        line-height: 40px;
+        transition: 0.3s;
+    }
+   
+    #header a.mobileBtn { display: none; }
+    #gnbList a.mobileClose { display: none; }
 }
 
 /* 모바일 */
@@ -200,8 +226,6 @@ body {
         background: url(../images/close.png) no-repeat center /cover;
     }
 
-    #header {width: 100%;}
-
     #header h1 {
         position: absolute;
         top: 20px; left: 4vw;
@@ -214,7 +238,7 @@ body {
         width: 90px; height: 32px;
         background: url(../images/gcova_logo.png) no-repeat center / cover;
     }
-    #header {height: 800px;}
+
     #gnbList {
         margin-right: 4vw;
         display: flex;

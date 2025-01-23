@@ -127,6 +127,7 @@
     z-index: 2;
     width: 36vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: start;
     align-items: center;
     gap: 30px;
@@ -146,16 +147,13 @@
     text-indent: -1000%;
     white-space: nowrap;
     overflow: hidden;
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     background: url(../images/arrowRight.png) no-repeat center /cover;
 }
 #btnGroup .prevBtn {
-    left: 420px;
     transform: rotate(180deg);
 }
 #btnGroup .nextBtn {
-    left: 450px;
 }
 #btnBarGroup { position: relative; }
 #btnBar {
@@ -172,6 +170,12 @@
     background: #ffa5a5c0;
 }
 
+@media screen and (max-width: 1023) {
+    
+    #btnGroup {
+        width: 100%;
+    }
+}
 
 /* ---------- 지코바 메뉴 ---------- */
 
