@@ -106,6 +106,9 @@ body {
 
 /* 데스크탑 */
 @media screen and (min-width: 1281px) {
+    #pageTop {
+        bottom: 100px;
+    }
     #gnb {
         height: 350px;
         display: flex;
@@ -146,7 +149,10 @@ body {
 
 /* 모바일 */
 @media screen and (max-width: 600px) {
-
+    /* 상단화면 이동버튼 */
+    #pageTop {
+        bottom: 20px;
+    }
     /* 모바일 버튼 */
     #gnb a.mobileBtn {
         z-index: 99;
