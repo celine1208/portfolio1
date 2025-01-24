@@ -568,14 +568,12 @@
         height: 740px;
         flex-wrap: nowrap;
         gap: 50px; }
-
     /* 슬라이드 비디오 공통 */
     #slideList li video {
         width: 56vw;
         top:0;
         height: 740px;
     }
-    
     /* 슬라이드 버튼 공통 */
     #goBtn {
         height: 60px;
@@ -587,7 +585,6 @@
         margin: 0;
         width: 9.4vw;
     }
-    
     /* 슬라이드 페이지네이션 */
     #pagination {
         width: 36vw;
@@ -596,9 +593,9 @@
         gap: 30px;
     }
     /* 슬라이드 */
-    #slideList li strong { font-size: 4.8rem; }
-    #slideList li p { font-size: 1.8rem;}
-    #goBtn a {font-size: 1.8rem;}
+    #slideList li strong { font-size: 2.5vw; }
+    #slideList li p { font-size: 1vw;}
+    #goBtn a {font-size: 1vw;}
     #pageNum {font-size: 2.4rem; }
 
     /* 지코바메뉴 */
@@ -721,6 +718,30 @@
         justify-content: start;
         align-items: center;
         gap: 30px;
+    }
+    /* 메뉴 소개 */
+    #menuList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 70px;
+    }
+    /* 브랜드 스토리 */
+    #brandList {
+        margin-top: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px
+    }
+    #brandList li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        background: no-repeat center /cover;
+        text-align: center;
+        border-radius: 20px;
     }
 }
 
