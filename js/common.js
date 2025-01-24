@@ -1,10 +1,36 @@
 // 네비바 마우스 오버 이벤트
 $('#gnb').on('mouseenter', function () {
-    $('#header').stop().animate({ height: 400 }, 500);
+    if (window.innerWidth > 440) {
+        $('#header').stop().animate({ height: 400 }, 500);
+    }
 });
 
 $('#gnb').on('mouseleave', function () {
     $('#header').stop().animate({ height: 100 }, 500);
+});
+
+// 모바일 버튼 클릭시 네비바 토글
+$('#gnb a.mobileBtn').on('click', function () {
+    if (window.innerWidth <= 600) {
+        $('#gnb').toggleClass('on');
+        if ($('#gnb').hasClass('on')) {
+            $('#header').stop().animate({ height: 770 }, 500);
+            $('#gnb a.mobileBtn').css({ backgroundImage:'url(./images/close.png)'})
+            $('.snb').hide();
+        }
+        else {
+            $('#header').stop().animate({ height: 100 }, 500);
+            $('#gnb a.mobileBtn').css({ backgroundImage:'url(./images/mobileBtn.png)'})
+
+        }
+    }
+});
+
+$('#gnbList li a').on('click', function () {
+    if (window.innerWidth <= 600) {
+        $(this).next().slideToggle();
+        $(this).parent().siblings().children('.snb').slideUp();
+    }
 });
 
 // 슬라이드

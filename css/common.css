@@ -63,7 +63,8 @@ body {
 #gnbList > li > a {
     position: relative;
     width: 100%;
-    margin: 40px 0 40px 0;
+    margin: 40px 0 20px 0;
+    padding: 0 0 20px 0;
     display: block;
     font-size: 1.8rem;
 }
@@ -93,13 +94,13 @@ body {
 }
 .snb > li > a:hover { color: #B90B0B; }
 
-/* 모바일 */
+/* 네비바 버튼 */
 #gnb a.mobileBtn { display: none; }
 #gnb a.mobileClose { display: none; }
 #header.mobile {right:0;}
 
 /* 태블릿 */
-@media screen and (min-width: 431px){
+@media screen and (min-width: 601px){
 
 }
 
@@ -138,17 +139,19 @@ body {
         line-height: 40px;
         transition: 0.3s;
     }
-   
+    
     #header a.mobileBtn { display: none; }
     #gnbList a.mobileClose { display: none; }
 }
 
 /* 모바일 */
-@media screen and (max-width: 430px) {
-    #header a.mobileBtn {
+@media screen and (max-width: 600px) {
+
+    /* 모바일 버튼 */
+    #gnb a.mobileBtn {
         z-index: 99;
         position: absolute;
-        top: 20px; right: 4vw;
+        top: 30px; right: 4vw;
         display: block;
         width: 30px; height: 30px;
         text-indent: -1000%;
@@ -156,47 +159,64 @@ body {
         overflow: hidden;
         background: url(../images/mobileBtn.png) no-repeat center / cover;
     }
-    #gnbList a.mobileClose {
-        z-index: 99;
-        position: absolute;
-        top: 20px; right: 4vw;
-        display: block;
-        text-indent: -1000%;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 30px; height: 30px;
+    #gnb a.mobileClose {
         background: url(../images/close.png) no-repeat center /cover;
     }
 
-    #header h1 {
-        position: absolute;
-        top: 20px; left: 4vw;
-        text-indent: -1000%;
-        white-space: nowrap;
-        overflow: hidden;
+    /* 헤더 */
+    #header {
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 100; height: 100px;
+        width: 100%;
+        background: #fff;
+        /* overflow: hidden; */
+        border-radius: 0;
+        box-shadow: 0 5px 10px #00000033;
     }
-    #header h1 a {
-        display: block;
-        width: 90px; height: 32px;
-        background: url(../images/gcova_logo.png) no-repeat center / cover;
+    
+    #gnb {
+        height: 770px;
+        display: flex;
+        justify-content: end;
     }
 
     #gnbList {
+        margin-top: 120px;
         margin-right: 4vw;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: end;
-        gap: 30px;
+        gap: 0;
+    }
+    #gnbList > li {
+        margin-bottom: 40px;
+
     }
     #gnbList > li > a {
-        margin-top: 100px;
+        margin: 0;
         margin-bottom: 0;
         font-size: 1.8rem;
     }
+    #gnbList > li > a::before {
+        position: absolute;
+        bottom: 0; left: 0;
+        content: '';
+        display: block;
+        width: 0; height: 2px;
+        background: #B90B0B;
+        transition: 0.3s;
+    }
+    #gnbList > li:hover a::before {
+        width: 100%;
+    }
+
     #gnbList li .snb > li > a {
         font-size: 1.8rem;
+        text-align: end;
     }
+
 }
 
 

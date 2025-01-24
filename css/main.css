@@ -206,7 +206,7 @@
     transition: 0.5s;
 }
 #menuList li figure img:hover {
-    transform: rotate(20deg);
+    transform: scale(1.1);
 }
 /* 메뉴 이름 */
 #menuList li figure figcaption {
