@@ -1,9 +1,15 @@
+function gnbHandler () {
+    if (window.scrollY === 0) {
+        $('#header').removeClass('active')
+                    .height(100);
+    }
+}
+
 // 네비바 마우스 오버 이벤트
 $('#gnb').on('mouseenter', function () {
     if (window.innerWidth > 710) {
         $('#header').stop().animate({ height: 400 }, 500);
         $('#header').addClass('active');
-        $('body').css({ overflow: 'hidden' });
     }
 });
 
@@ -11,19 +17,23 @@ $('#gnb').on('mouseleave', function () {
     if (window.innerWidth > 710) {
         $('#header').stop().animate({ height: 100 }, 500);
         $('body').css({ overflow: 'visible' });
-        if (window.scrollY === 0) {
-            $('#header').removeClass('active');
-        }
+        gnbHandler();
     }
 });
 
 // 스크롤 시 네비바 배경색 변경
 $(window).on('scroll', function(){
-    $('#header').addClass('active');
-    if (window.scrollY === 0) {
-        $('#header').removeClass('active');
+    if(window.innerWidth > 710){
+        $('#header').addClass('active');
+        gnbHandler();
     }
 })
+
+$(window).on('resize', function () {
+    if (window.innerWidth <= 710) {
+        $('#header').addClass('active');
+    }
+});
 
 // 모바일 버튼 클릭시 네비바 토글
 $('#gnb a.mobileBtn').on('click', function (e) {
@@ -32,7 +42,7 @@ $('#gnb a.mobileBtn').on('click', function (e) {
     if (window.innerWidth <= 710) {
         $(this).toggleClass('mobilebtn mobileClose');
         if ($(this).hasClass('mobileClose')) {
-            $('#header').stop().animate({ height: 770 }, 500);
+            $('#header').stop().animate({ height: '100vh' }, 500);
             $('#pageTop').hide();
         }
         else {
@@ -54,7 +64,8 @@ $(document).on('click', function (e) {
 });
 
 // gnbList 클릭시 서브메뉴 토글
-$('#gnbList li a').on('click', function () {
+$('#gnbList li a').on('click', function (e) {
+    e.preventDefault();
     if (window.innerWidth <= 600) {
         $(this).next().slideToggle();
         $(this).parent().siblings().children('.snb').slideUp();

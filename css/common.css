@@ -88,12 +88,13 @@ body {
 }
 #gnbList > li > a::before {
     position: absolute;
-    top: 59px; left: 50%;
+    top: 59px;
+    left: 50%;
     translate: -50%;
     content: '';
     display: block;
     width: 0; height: 3px;
-    background: #fafa96;
+    background: var(--primary);
     transition: 0.3s;
 }
 #gnbList > li:hover a::before {
@@ -125,7 +126,9 @@ body {
 #header.active #gnb a.mobileBtn {
     filter: invert(1);
 }
-
+#header.active #gnbList > li > a::before {
+    background: var(--secondary);
+}
 /* 네비바 버튼 */
 #gnb a.mobileBtn { display: none; }
 #gnb a.mobileClose { display: none; }
@@ -208,16 +211,6 @@ body {
         height: 60px;
     }
 
-    #header::after {
-        content: '';
-        position: absolute;
-        top:100px;
-        left:0;
-        width: 100%;
-        height: 1px;
-        background: #fff9;
-    }
-    
     #header h1 {
         top: 15px;
     }
@@ -237,29 +230,26 @@ body {
         gap: 0;
     }
     #gnbList > li {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
 
     }
     #gnbList > li > a {
         margin: 0;
         margin-bottom: 0;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
     #gnbList > li > a::before {
-        position: absolute;
-        bottom: 0; left: 0;
-        content: '';
-        display: block;
-        width: 0; height: 2px;
-        background: var(--primary);
-        transition: 0.3s;
+        top: 40px;
     }
     #gnbList > li:hover a::before {
         width: 100%;
     }
 
+    #gnbList li .snb {
+        margin-top: 20px;
+    }
     #gnbList li .snb > li > a {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         text-align: end;
     }
 

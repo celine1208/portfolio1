@@ -680,10 +680,11 @@
     }
     #slideList li strong {
         width: 100%;
+        font-size: 7vw;
     }
     #slideList li p {
         width: 100%;
-        font-size: 1.2rem;
+        font-size: 3vw;
     }
     #slideList li video {
         top: 340px;
@@ -715,7 +716,8 @@
         background: #ffa5a5c0;
     }
     /* 메뉴 소개 */
-    #menu h2 { font-size: 2.8rem; }
+    #menu h2 { font-size: 6vw; }
+    #menu p { font-size: 3vw; }
 
     /* 브랜드 스토리 */
     #brandList {
@@ -733,6 +735,12 @@
         background: no-repeat center /cover;
         text-align: center;
         border-radius: 20px;
+    }
+    #brand h2 {
+        font-size: 6vw;
+    }
+    #brand p {
+        font-size: 3vw;
     }
 }
 
