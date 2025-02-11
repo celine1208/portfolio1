@@ -14,6 +14,11 @@ a {text-decoration: none; color: #000;}
     clip: rect(0,0,0,0);
 }
 
+:root {
+    --primary: #B90B0B;
+    --bgColor: #ededed;
+}
+
 /* 폰트 */
 body {
     font-family: 'S-CoreDream-4Regular';
@@ -74,7 +79,7 @@ body {
     content: '';
     display: block;
     width: 0; height: 2px;
-    background: #B90B0B;
+    background: #fff;
     transition: 0.3s;
 }
 #gnbList > li:hover a::before {
@@ -92,7 +97,7 @@ body {
     line-height: 40px;
     transition: 0.3s;
 }
-.snb > li > a:hover { color: #B90B0B; }
+.snb > li > a:hover { color: var(--primary); }
 
 /* 네비바 버튼 */
 #gnb a.mobileBtn { display: none; }
@@ -211,7 +216,7 @@ body {
         content: '';
         display: block;
         width: 0; height: 2px;
-        background: #B90B0B;
+        background: var(--primary);
         transition: 0.3s;
     }
     #gnbList > li:hover a::before {

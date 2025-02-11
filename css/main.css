@@ -40,7 +40,7 @@
 
 /* 슬라이드 배경 */
 #slideList li.slide1 {
-    background: #B90B0B;
+    background: var(--primary);
     z-index: 1;
 }
 
@@ -103,7 +103,7 @@
 }
 
 #goBtn a:hover {
-    color: #B90B0B;
+    color: var(--primary);
 }
 #goBtn a::before {
     content: '';
@@ -263,7 +263,7 @@
     content: '';
     width: 0;
     height: 100%;
-    background: #B90B0B;
+    background: var(--primary);
     position: absolute;
     top: 0;
     left: 0;
@@ -381,7 +381,7 @@
     width: 0;
     height: 100%;
     display: block;
-    background: #B90B0B;
+    background: var(--primary);
     position: absolute;
     top: 0;
     left: 0;
@@ -478,7 +478,7 @@
     height: 40px;
     text-align: center;
     line-height: 40px;
-    background: #B90B0B;
+    background: var(--primary);
     color: #fff;
     white-space: nowrap;
 }
@@ -654,7 +654,7 @@
         text-align: center;
         margin-bottom: 40px;
         line-height: 80px;
-        background: #B90B0B;
+        background: var(--primary);
         color: #fff;
     }
     #franchise dl .q1 {

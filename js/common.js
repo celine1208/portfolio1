@@ -2,12 +2,28 @@
 $('#gnb').on('mouseenter', function () {
     if (window.innerWidth > 440) {
         $('#header').stop().animate({ height: 400 }, 500);
+        $('#header').css({ backgroundColor: '#B90B0B'});
+        $('#gnbList li a').css({ color: '#fff'});
     }
 });
 
 $('#gnb').on('mouseleave', function () {
     $('#header').stop().animate({ height: 100 }, 500);
+    if (window.scrollY === 0) {
+        $('#header').css({ backgroundColor: '#fff'});
+        $('#gnbList li a').css({ color: '#000'});
+    }
 });
+
+// 스크롤 시 네비바 배경색 변경
+$(window).on('scroll', function(){
+    $('#header').css({ backgroundColor: '#B90B0B'});
+    $('#gnbList li a').css({ color: '#fff'});
+    if (window.scrollY === 0) {
+        $('#header').css({ backgroundColor: '#fff'});
+        $('#gnbList li a').css({ color: '#000'});
+    }
+})
 
 // 모바일 버튼 클릭시 네비바 토글
 $('#gnb a.mobileBtn').on('click', function () {
@@ -26,12 +42,15 @@ $('#gnb a.mobileBtn').on('click', function () {
     }
 });
 
+// gnbList 클릭시 서브메뉴 토글
 $('#gnbList li a').on('click', function () {
     if (window.innerWidth <= 600) {
         $(this).next().slideToggle();
         $(this).parent().siblings().children('.snb').slideUp();
     }
 });
+
+
 
 // 슬라이드
 let slideLength = $("#slideList li").length;
