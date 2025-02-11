@@ -14,13 +14,15 @@
     overflow: hidden;
 }
 
-/* ---------- 슬라이드 ---------- */
+/* ==================
+    Slider Section
+   ================== */
 
 /* 슬라이더 */
 #slider {
     position: relative;
-    margin: 100px 4vw 0 4vw;
-    width: 92vw;
+    margin: 100px auto 0;
+    width: 92%;
     height: 650px;
     border-radius: 0 0 20px 20px;
     overflow: hidden;
@@ -99,27 +101,12 @@
     line-height: 60px;
     background: transparent;
     overflow: hidden;
-    transition: all .5s ease-in-out background-color;
+    transition: 0.3s;
 }
 
 #goBtn a:hover {
     color: var(--primary);
-}
-#goBtn a::before {
-    content: '';
-    width: 0;
-    height: 100%;
-    display: block;
     background: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all .7s cubic-bezier(0.7, 0, 0.2, 1);
-    box-shadow: 2px 0px 15px rgb(255, 255, 255, 0.8);
-    z-index: -1;
-}
-#goBtn a:hover::before {
-    width: 120%;
 }
 
 /* 슬라이드 페이지네이션 */
@@ -166,12 +153,14 @@
 }
 
 #btnBarBg {
-    width: 15.625vw;
+    width: 230px;
     height: 3px;
     background: #ffa5a5c0;
 }
 
-/* ---------- 지코바 메뉴 ---------- */
+/* ==================
+    Menu Section
+   ================== */
 
 #menu {
     margin-top: 160px;
@@ -218,11 +207,20 @@
     text-align: center;
 }
 
-/* ---------- 브랜드스토리 ----------*/
+/* ==================
+    Brand Section
+   ================== */
 #brand {
     position: relative;
-    margin: 160px 4vw 0;
+    width: 92%;
+    margin: 160px auto 0;
 }
+
+.brandIntro {
+    display: flex;
+    flex-direction: column;
+}
+
 /* 브랜드 타이틀 */
 #brand h2 {
     font-family: 'JalnanGothic';
@@ -240,9 +238,7 @@
 }
 /* 브랜드 자세히보기 버튼 */
 #brand a {
-    position: absolute;
-    top:0;
-    right: 0;
+    margin-top: 40px;
     display: block;
     width: 200px;
     height: 60px;
@@ -253,39 +249,27 @@
     line-height: 56px;
     background: transparent;
     overflow: hidden;
-    transition: all .5s ease-in-out;
+    transition: 0.3s;
 }
 #brand a:hover {
     color: #fff;
-}
-#brand a::before {
-    display: block;
-    content: '';
-    width: 0;
-    height: 100%;
     background: var(--primary);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
-    box-shadow: 2px 0px 15px rgba(0, 0, 0, .8);
 }
-#brand a:hover::before {
-    width: 120%;
-}
+
 /* 브랜드 카드 */
 #brandList {
     margin-top: 70px;
-    display: flex;
+    display:flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    row-gap: 35px;
 }
 #brandList li {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 22vw;
-    height: 28vw;
+    width: 48%;
+    height: 460px;
     background: no-repeat center /cover;
     text-align: center;
     border-radius: 20px;
@@ -296,10 +280,10 @@
     font-family: 'S-CoreDream-6Bold';
     font-weight: normal;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 2.8rem;
     color: #fff;
     text-transform: uppercase;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 #brandList li:hover dl dt {
     padding-bottom: 40px;
@@ -309,10 +293,10 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: #fff;
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 #brandList li:hover dl dd {
     opacity: 1;
@@ -334,9 +318,12 @@
     background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(../images/brand04.png);
 }
 
-/* ---------- 창업방법 ---------- */
+/* ==================
+    Franchise Section
+   ================== */
 #franchise {
-    margin: 320px 4vw 0 4vw;
+    margin: 320px auto 0;
+    width: 92%;
     position: relative;
     height: 800px;
     overflow: hidden;
@@ -359,7 +346,6 @@
 
 /* 창업방법 자세히 보기 버튼 */
 #franchise a {
-    position: relative;
     margin-top: 40px;
     display: block;
     width: 200px;
@@ -371,26 +357,11 @@
     line-height: 56px;
     background: transparent;
     overflow: hidden;
-    transition: all .5s ease-in-out;
+    transition: 0.3s;
 }
 #franchise a:hover {
     color: #fff;
-}
-#franchise a::before {
-    content: '';
-    width: 0;
-    height: 100%;
-    display: block;
     background: var(--primary);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .5s cubic-bezier(0.7, 0, 0.2, 1);
-    box-shadow: 2px 0px 15px rgba(0, 0, 0, .8);
-}
-#franchise a:hover::before {
-    width: 120%;
 }
 
 /* 창업방법 꼬꼬닭 */
@@ -503,7 +474,9 @@
 }
 
 
-/* ---------- 매장찾기 ---------- */
+/* ==================
+    Location Section
+   ================== */
 #location {
     width: 100%;
     height: 800px;
@@ -554,20 +527,22 @@
     background: url(../images/searchIcon.png) no-repeat center /cover;
 }
 
-/* ---------- 태블릿 ---------- */
-@media screen and (min-width: 431px){
-
-}
-/* ---------- 데스크탑 ---------- */
+/* ==================
+    Desktop 1281px
+   ================== */
 @media screen and (min-width: 1281px) {
 
-    #slider { height: 740px; }
+    #slider {
+        height: 740px;
+    }
+
     /* 슬라이드 공통 */
     #slideList li {
         padding: 100px 40px 0 40px;
         height: 740px;
         flex-wrap: nowrap;
         gap: 50px; }
+
     /* 슬라이드 비디오 공통 */
     #slideList li video {
         width: 56vw;
@@ -584,6 +559,9 @@
     #goBtn a {
         margin: 0;
         width: 9.4vw;
+    }
+    #btnBarBg {
+        width: 300px;
     }
     /* 슬라이드 페이지네이션 */
     #pagination {
@@ -607,9 +585,13 @@
     #brand h2{ font-size: 4.8rem; }
     #brand p { font-size: 2.2rem; }
     #brand a {
+        width: 300px;
         font-size: 1.8rem;
-        width: 12.5vw;
-        top: 30px;
+    }
+
+    #brandList li {
+        width: 23%;
+        height: 480px;
     }
     #brandList li dl dt { font-size: 3.6rem; }
     #brandList li dl dd { font-size: 1.8rem; }
@@ -618,7 +600,7 @@
     #franchise h2 { font-size: 4.8rem; }
     #franchise p { font-size: 2.2rem; }
     #franchise a {
-        width: 12.5vw;
+        width: 250px;
         font-size: 1.8rem;
      }
     #characterLogo {
@@ -679,10 +661,14 @@
     #location h2 { font-size: 4.8rem; }
     #location p { font-size: 2.2rem; }
 }
-/* ---------- 모바일 ---------- */
-@media screen and (max-width: 440px) {
+
+/* ==================
+    Mobile
+   ================== */
+
+@media screen and (max-width: 710px) {
     #slider {
-        margin: 90px 4vw 0 4vw;
+        margin: 60px auto 0;
         height: 660px;
     }
     #slideList li {
@@ -703,7 +689,7 @@
     #goBtn {
         display:flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        gap: 20px;
     }
     #goBtn a {
         width: 150px;
