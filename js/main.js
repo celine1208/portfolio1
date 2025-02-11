@@ -184,7 +184,14 @@ $(function() {
     }
 
     // Slide to specific index
-
+    function slideTo(index) {
+        if (index < 0) index = totalItems - 1;
+        if (index >= totalItems) index = 0;
+        
+        currentIndex = index;
+        menuItems.css('transform', `translateX(-${currentIndex * 100}%)`);
+        updatePagination();
+    }
 
     // Touch events for swipe functionality
     $('#menuList').on('touchstart', function(e) {
@@ -225,4 +232,4 @@ $(function() {
     // Initialize on load and resize
     initMobileMenu();
     $(window).on('resize', initMobileMenu);
-});ㄴ
+});

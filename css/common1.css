@@ -1,0 +1,315 @@
+@charset "utf-8";
+
+/* ===== Reset ===== */
+html {
+    font-size: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+body, h1, h2, h3, ul, p, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* ===== Variables ===== */
+:root {
+    --primary: #B90B0B;
+    --secondary: #fafa96;
+    --bgColor: #ededed;
+    --white: #fff;
+}
+
+/* ===== Utilities ===== */
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* ===== Typography ===== */
+body {
+    font-family: 'S-CoreDream-4Regular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===== Header ===== */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    background: var(--white);
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#header::after {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Logo */
+#header h1 {
+    position: absolute;
+    top: 30px;
+    left: 4vw;
+    text-indent: -1000%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#header h1 a {
+    display: block;
+    width: 90px;
+    height: 32px;
+    background: url(../images/gcova_logo.png) no-repeat center / cover;
+}
+
+/* Navigation */
+#gnb {
+    height: 350px;
+    display: flex;
+    justify-content: end;
+}
+
+#gnbList {
+    margin-right: 4vw;
+    text-align: center;
+    display: flex;
+    gap: 40px;
+}
+
+#gnbList > li > a {
+    position: relative;
+    width: 100%;
+    margin: 40px 0 20px 0;
+    padding: 0 0 20px 0;
+    display: block;
+    font-size: 1.8rem;
+}
+
+#gnbList > li > a::before {
+    position: absolute;
+    top: 59px;
+    left: 50%;
+    translate: -50%;
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--secondary);
+    transition: 0.3s;
+}
+
+#gnbList > li:hover a::before {
+    width: 100%;
+}
+
+/* Sub Navigation */
+#gnbList li .snb {
+    margin-top: 40px;
+    background: transparent;
+}
+
+#gnbList li .snb > li > a {
+    display: block;
+    font-size: 1.7rem;
+    line-height: 40px;
+    transition: 0.3s;
+}
+
+/* Header States */
+#header.active {
+    background: var(--primary);
+}
+
+#header.active #gnbList li a {
+    color: var(--white);
+}
+
+#header.active #gnb a.mobileBtn {
+    filter: invert(1);
+}
+
+/* Mobile Navigation Buttons */
+#gnb a.mobileBtn,
+#gnb a.mobileClose {
+    display: none;
+}
+
+#header.mobile {
+    right: 0;
+}
+
+/* ===== Desktop (1281px and up) ===== */
+@media screen and (min-width: 1281px) {
+    #pageTop {
+        bottom: 100px;
+    }
+
+    #gnb {
+        height: 350px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #gnbList {
+        margin: 0;
+        gap: 80px;
+        display: flex;
+        text-align: center;
+        justify-content: end;
+    }
+
+    #header h1 {
+        top: 20px;
+    }
+
+    #header h1 a {
+        width: 132px;
+        height: 48px;
+    }
+}
+
+/* ===== Mobile (710px and down) ===== */
+@media screen and (max-width: 710px) {
+    #pageTop {
+        bottom: 20px;
+    }
+
+    /* Mobile Header */
+    #header {
+        height: 60px;
+    }
+
+    #header h1 {
+        top: 15px;
+    }
+
+    /* Mobile Navigation */
+    #gnb {
+        height: 770px;
+        display: flex;
+        justify-content: end;
+    }
+
+    #gnbList {
+        margin-top: 120px;
+        margin-right: 4vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: end;
+        gap: 0;
+    }
+
+    #gnbList > li {
+        margin-bottom: 40px;
+    }
+
+    #gnbList > li > a {
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    #gnbList > li > a::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: 0.3s;
+    }
+
+    /* Mobile Buttons */
+    #gnb a.mobileBtn {
+        z-index: 99;
+        position: absolute;
+        top: 18px;
+        right: 4vw;
+        display: block;
+        width: 25px;
+        height: 25px;
+        text-indent: -1000%;
+        white-space: nowrap;
+        overflow: hidden;
+        background: url(../images/mobileBtn.png) no-repeat center / cover;
+    }
+
+    #gnb a.mobileClose {
+        width: 20px;
+        height: 20px;
+        background: url(../images/close.png) no-repeat center / cover;
+    }
+}
+
+/* ===== Footer ===== */
+#footer {
+    padding: 0 12vw;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+                url(../images/locationBg.png) repeat-x bottom / 1920px;
+}
+
+#footer p,
+#footer a {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+#footer .companyInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .companyInfo p:not(:last-child) {
+    padding-right: 40px;
+}
+
+#footer .info a:not(:first-child) {
+    padding-left: 20px;
+}
+
+#footer .info a:not(:last-child) {
+    padding-right: 20px;
+    border-right: 1px solid var(--white);
+}
+
+/* ===== Large Screens (1921px and up) ===== */
+@media screen and (min-width: 1921px) {
+    #footer {
+        background-size: 100%;
+    }
+
+    #footer .companyInfo {
+        flex-direction: row;
+    }
+}

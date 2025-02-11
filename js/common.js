@@ -2,31 +2,26 @@
 $('#gnb').on('mouseenter', function () {
     if (window.innerWidth > 710) {
         $('#header').stop().animate({ height: 400 }, 500);
-        $('#header').css({ backgroundColor: '#B90B0B'});
-        $('#gnbList li a').css({ color: '#fff'});
+        $('#header').addClass('active');
+        $('body').css({ overflow: 'hidden' });
     }
 });
 
 $('#gnb').on('mouseleave', function () {
     if (window.innerWidth > 710) {
         $('#header').stop().animate({ height: 100 }, 500);
+        $('body').css({ overflow: 'visible' });
         if (window.scrollY === 0) {
-            $('#header').css({ backgroundColor: '#fff'});
-            $('#gnbList li a').css({ color: '#000'});
+            $('#header').removeClass('active');
         }
     }
 });
 
 // 스크롤 시 네비바 배경색 변경
 $(window).on('scroll', function(){
-    // $('#header').css({ backgroundColor: '#B90B0B'});
-    // $('#gnbList li a').css({ color: '#fff'});
-    // $('#gnb a.mobileBtn').css({ filter: 'invert(1)'});
     $('#header').addClass('active');
     if (window.scrollY === 0) {
-        $('#header').css({ backgroundColor: '#fff'});
-        $('#gnbList li a').css({ color: '#000'});
-        $('#gnb a.mobileBtn').css({ filter: 'invert(0)'});
+        $('#header').removeClass('active');
     }
 })
 
