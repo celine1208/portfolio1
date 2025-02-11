@@ -5,6 +5,12 @@ function gnbHandler () {
     }
 }
 
+function resizeHandler () {
+    if (window.innerWidth <= 710) {
+        $('#header').addClass('active');
+    }
+}
+
 // 네비바 마우스 오버 이벤트
 $('#gnb').on('mouseenter', function () {
     if (window.innerWidth > 710) {
@@ -29,10 +35,11 @@ $(window).on('scroll', function(){
     }
 })
 
+// 모바일 헤더 배경 붉은색
+resizeHandler ();
+
 $(window).on('resize', function () {
-    if (window.innerWidth <= 710) {
-        $('#header').addClass('active');
-    }
+    resizeHandler ()
 });
 
 // 모바일 버튼 클릭시 네비바 토글

@@ -141,17 +141,19 @@ body {
     #pageTop {
         bottom: 100px;
     }
+
+    #header {
+        height: 100px;
+    }
+    #header h1 { top:20px; }
+    
+    #header h1 a {
+        width: 132px; height: 48px;
+    }
     #gnb {
         height: 350px;
         display: flex;
         justify-content: center;
-    }
-    #gnbList { gap: 80px }
-
-    #header h1 { top:20px; }
-
-    #header h1 a {
-        width: 132px; height: 48px;
     }
     #gnbList {
         margin: 0;
