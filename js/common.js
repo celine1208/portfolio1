@@ -19,9 +19,10 @@ $('#gnb').on('mouseleave', function () {
 
 // 스크롤 시 네비바 배경색 변경
 $(window).on('scroll', function(){
-    $('#header').css({ backgroundColor: '#B90B0B'});
-    $('#gnbList li a').css({ color: '#fff'});
-    $('#gnb a.mobileBtn').css({ filter: 'invert(1)'});
+    // $('#header').css({ backgroundColor: '#B90B0B'});
+    // $('#gnbList li a').css({ color: '#fff'});
+    // $('#gnb a.mobileBtn').css({ filter: 'invert(1)'});
+    $('#header').addClass('active');
     if (window.scrollY === 0) {
         $('#header').css({ backgroundColor: '#fff'});
         $('#gnbList li a').css({ color: '#000'});

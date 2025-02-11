@@ -134,3 +134,95 @@ $slider.on('mousemove', function(e) {
   const walk = x - startX;
   $slider.scrollLeft(scrollLeft - walk);
 });
+
+
+// Mobile Menu Swipe Slider
+$(function() {
+    let currentIndex = 0;
+    const menuItems = $('#menuList li');
+    const totalItems = menuItems.length;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    // Initialize mobile menu
+    function initMobileMenu() {
+        if ($(window).width() <= 710) {
+        
+            // Style menu items for horizontal sliding
+            menuItems.css({
+                'min-width': '100%',
+                'transition': 'transform 0.5s ease',
+                'transform': `translateX(-${currentIndex * 100}%)`
+            });
+            
+            // Add pagination dots if they don't exist
+            if ($('#menuPagination').length === 0) {
+                let paginationHtml = '<div id="menuPagination" style="display: flex; justify-content: center; gap: 8px; margin: 20px 0;">';
+                for (let i = 0; i < totalItems; i++) {
+                    paginationHtml += `<span class="menu-dot" data-index="${i}" style="
+                        width: 8px;
+                        height: 8px;
+                        background: ${i === currentIndex ? 'var(--primary)' : '#ddd'};
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: all 0.3s ease;"></span>`;
+                }
+                paginationHtml += '</div>';
+                $('#menuList').after(paginationHtml);
+            }
+        } else {
+            // Reset styles for desktop view
+            $('#menuList, #menuList li').removeAttr('style');
+            $('#menuPagination').remove();
+        }
+    }
+
+    // Update pagination dots
+    function updatePagination() {
+        $('.menu-dot').css('background', '#ddd')
+            .eq(currentIndex).css('background', 'var(--primary)');
+    }
+
+    // Slide to specific index
+
+
+    // Touch events for swipe functionality
+    $('#menuList').on('touchstart', function(e) {
+        touchStartX = e.originalEvent.touches[0].clientX;
+    });
+
+    $('#menuList').on('touchmove', function(e) {
+        if ($(window).innterWidth() <= 710) {
+            e.preventDefault(); // Prevent default only in mobile view
+        }
+    });
+
+    $('#menuList').on('touchend', function(e) {
+        touchEndX = e.originalEvent.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance for swipe
+        const swipeDistance = touchEndX - touchStartX;
+        
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+            if (swipeDistance > 0) {
+                // Swipe right - show previous
+                slideTo(currentIndex - 1);
+            } else {
+                // Swipe left - show next
+                slideTo(currentIndex + 1);
+            }
+        }
+    }
+
+    // Dot navigation event handler
+    $(document).on('click', '.menu-dot', function() {
+        slideTo($(this).data('index'));
+    });
+
+    // Initialize on load and resize
+    initMobileMenu();
+    $(window).on('resize', initMobileMenu);
+});ㄴ

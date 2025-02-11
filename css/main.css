@@ -203,7 +203,7 @@
     font-family: 'S-CoreDream-4Regular';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
@@ -707,10 +707,6 @@
     }
     /* 메뉴 소개 */
     #menuList {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 70px;
     }
     /* 브랜드 스토리 */
     #brandList {

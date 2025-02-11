@@ -16,7 +16,9 @@ a {text-decoration: none; color: #000;}
 
 :root {
     --primary: #B90B0B;
+    --secondary: #fafa96;
     --bgColor: #ededed;
+    --white: #fff;
 }
 
 /* 폰트 */
@@ -36,6 +38,16 @@ body {
     overflow: hidden;
     /* border-radius: 0 0 40px 40px; */
     box-shadow: 0 5px 10px #00000033;
+}
+
+#header::after {
+    content: '';
+    position: absolute;
+    top:100px;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background: #fff9;
 }
 
 /* 로고 */
@@ -75,11 +87,12 @@ body {
 }
 #gnbList > li > a::before {
     position: absolute;
-    bottom: 0; left: 0;
+    top: 59px; left: 50%;
+    translate: -50%;
     content: '';
     display: block;
-    width: 0; height: 2px;
-    background: #fff;
+    width: 0; height: 3px;
+    background: #fafa96;
     transition: 0.3s;
 }
 #gnbList > li:hover a::before {
@@ -88,16 +101,26 @@ body {
 
 /* 상세메뉴 */
 #gnbList li .snb {
-    margin-top: 20px;
+    margin-top: 40px;
     background: transparent;
 }
 #gnbList li .snb > li > a {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     line-height: 40px;
     transition: 0.3s;
 }
-.snb > li > a:hover { color: var(--primary); }
+.snb li a:hover { color: var(--secondary); }
+
+#header.active {
+    background: var(--primary);
+}
+#header.active #gnbList li a {
+    color: var(--white);
+}
+#header.active #gnb a.mobileBtn {
+    filter: invert(1);
+}
 
 /* 네비바 버튼 */
 #gnb a.mobileBtn { display: none; }
@@ -140,7 +163,7 @@ body {
     }
     #gnbList li .snb > li > a {
         display: block;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         line-height: 40px;
         transition: 0.3s;
     }
