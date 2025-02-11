@@ -85,7 +85,6 @@
 
 /* 슬라이드 버튼 공통 */
 #goBtn {
-    height: 100%;
     display: block;
 }
 #goBtn a {
@@ -671,12 +670,12 @@
     #slider {
         margin: 60px auto 0;
         width: 100%;
-        height: 100vh;
+        height: 80vh;
         border-radius: 0;
     }
     #slideList li {
         padding: 60px 20px 0 20px;
-        height: 100vh;
+        height: 80vh;
         flex-wrap: nowrap;
     }
     #slideList li strong {
@@ -689,6 +688,8 @@
     }
     #slideList li video {
         position: relative;
+        top: 0;
+        order:2;
     }
     #goBtn {
         display:flex;
@@ -703,7 +704,7 @@
     #pagination {
         position: absolute;
         padding-left: 20px;
-        top: 400px;
+        top: 340px;
         z-index: 2;
         display: flex;
         justify-content: start;
