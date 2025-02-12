@@ -95,6 +95,9 @@
 #slideList li p {
     color: var(--white);
 }
+#slideList li p {
+    margin:0;
+}
 
 /* Slide Video */
 #slideList li video {
@@ -134,9 +137,8 @@
 /* Progress Bar */
 #pagination {
     position: absolute;
-    width: 36vw;
     padding-left: 40px;
-    bottom: 200px;
+    bottom: 18vh;
     z-index: 2;
     display: flex;
     gap: 30px;
@@ -160,7 +162,7 @@
     background: var(--white);
 }
 #btnBarBg {
-    width: 300px;
+    width: 16vw;
     height: 3px;
     background: #ffa5a5c0;
 }
@@ -203,18 +205,47 @@
         flex-direction: column;
     }
     #goBtn a {
-        width: 340px;
+        width: 25vw;
         height: 80px;
+        line-height: 80px;
         font-size: 1.4vw;
     }
     #pagination {
         padding-left: 40px;
         bottom: 51vh;
     }
+    #btnBarBg {
+        width: 30vw;
+    }
 }
 
 @media screen and (max-width: 710px) {
-
+    #slider {
+        margin: 60px auto 0;
+    }
+    #slideList li {
+        gap: 20px;
+    }
+    #goBtn {
+        position:initial;
+        flex-direction: row;
+    }
+    #goBtn a {
+        width: 25vw;
+        font-size: 2.4vw;
+        height: 60px;
+        line-height: 60px;
+    }
+    #pagination {
+        bottom: 50vh;
+    }
+    #pageNum {
+        margin-top: 2px;
+        font-size: 1.8rem;
+    }
+    #btnBarBg {
+        width: 40vw;
+    }
 }
 
 /* ========== Menu Section ========== */
@@ -304,6 +335,27 @@
 #brandList li.brand3 { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/brand03.png); }
 #brandList li.brand4 { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/brand04.png); }
 
+@media screen and (max-width: 1280px) {
+    #brandList li {
+        width: 48%;
+        height: 460px;
+    }
+    #brandList li dl dd {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 710px) {
+    #brandList {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    #brandList li {
+        width: 100%;
+        height: 280px;
+    }
+}
 
 /* ========== franchise Section ========== */
 #franchise {
@@ -369,15 +421,6 @@
     transition: 0.5s opacity;
 }
 
-#faq dl {
-    position: absolute;
-    top: 160px;
-    left: 85px;
-    width: 600px;
-    height: 1000px;
-    font-size: 1.8rem;
-}
-
 /* 창업방법 아이폰 내부텍스트*/
 #faq dl {
     position: absolute;
@@ -385,6 +428,7 @@
     left: 85px;
     width: 600px;
     height: 1000px;
+    font-size: 1.8rem;
 }
 /* 창업방법 아이폰 내부텍스트 공통 */
 #faq dl dt,
@@ -409,6 +453,40 @@
     margin-bottom: 40px;
     background: var(--primary);
     color: var(--white);
+}
+@media screen and (max-width: 1280px) {
+    #characterLogo {display: none;}
+    #faq {
+        width: 100%;
+        left:0;
+        top:0;
+        background: none;
+    }
+    #characterLogo span,
+    #characterLogo p {
+        display: none;
+    }
+
+    #faq dl {
+        width: 100%;
+        top:200px;
+        left:0;
+        height: 600px;
+    }
+    #faq dl dt,
+    #faq dl dd {
+    height: 60px;
+    line-height: 60px;
+    }
+}
+@media screen and (max-width: 710px) {
+    #faq dl {
+        font-size: 1.4rem;
+    }
+    #faq dl dt,
+    #faq dl dd {
+        width: 90%;
+    }
 }
 
 /* ========== franchise Section ========== */
@@ -450,7 +528,11 @@
     background: url(../images/searchIcon.png) no-repeat center /cover;
 }
 
-
+@media screen and (max-width: 1280px) {
+    #location a {
+        width: 60vw;
+    }
+}
 /* ==================
     Media Queries
    ================== */
