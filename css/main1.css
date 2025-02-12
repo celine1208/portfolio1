@@ -56,10 +56,10 @@
 }
 @media screen and (max-width: 710px) {
     .section-title {
-        font-size: 3.2rem;
+        font-size: 3rem;
     }
     .section-subtitle {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
      }
     .cta-button {
         width: 240px;
@@ -142,8 +142,8 @@
 /* Progress Bar */
 #pagination {
     position: absolute;
+    bottom: 200px;
     padding-left: 40px;
-    bottom: 18vh;
     z-index: 2;
     display: flex;
     gap: 30px;
@@ -264,6 +264,9 @@
         height: 50px;
         line-height: 50px;
     }
+    #btnBarBg {
+        width: 140px;
+    }
 }
 
 /* ========== Menu Section ========== */
@@ -276,6 +279,10 @@
 #menu h2,
 #menu p {
     text-align: center;
+}
+
+#menu h2 br {
+    display: none;
 }
 
 #menuList {
@@ -296,6 +303,13 @@
     margin-top: 40px;
     text-align: center;
 }
+
+@media screen and (max-width: 1280px) {
+    #menu h2 br {
+        display: inline;
+    }
+}
+
 
 /* ========== Brand Section ========== */
 

@@ -82,10 +82,10 @@ body {
 #header::before {
     content: '';
     position: absolute;
-    top: 225px;
-    right:4vw;
-    width: 150px;
-    height: 180px;
+    top: 280px;
+    right: 4vw;
+    width: 100px;
+    height: 120px;
     background: url(../images/character1.png) repeat-x center / 100%;
 }
 
@@ -102,7 +102,7 @@ body {
     display: block;
     width: 132px;
     height: 48px;
-    background: url(../images/logo7.png) no-repeat center / cover;
+    background: url(../images/logo1.png) no-repeat center / cover;
 }
 
 /* Navigation */
