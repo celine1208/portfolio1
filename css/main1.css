@@ -259,7 +259,8 @@
         flex-direction: row;
     }
     #goBtn a {
-        font-size: 1.8rem;
+        width: 140px;
+        font-size: 1.6rem;
         height: 50px;
         line-height: 50px;
     }
