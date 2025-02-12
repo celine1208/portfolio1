@@ -5,7 +5,7 @@
     font-family: 'JalnanGothic';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.6vw;
+    font-size: 4.8rem;
 }
 
 .section-subtitle {
@@ -13,7 +13,7 @@
     font-family: 'S-CoreDream-3Light';
     font-weight: normal;
     font-style: normal;
-    font-size: 1.2vw;
+    font-size: 2rem;
 }
 /* 자세히 보기 버튼 */
 .cta-button {
@@ -22,13 +22,12 @@
     width: 300px;
     height: 60px;
     line-height: 60px;
-    font-size: 1vw;
     text-align: center;
     border: 2px solid #000;
     border-radius: 10px;
     background: transparent;
-    overflow: hidden;
     transition: 0.3s;
+    font-size: 2rem;
 }
 
 .cta-button:hover {
@@ -38,26 +37,33 @@
 
 @media screen and (max-width: 1280px) {
     .section-title {
-        font-size: 3vw;
+        font-size: 4rem;
     }
     .section-subtitle {
-        font-size: 1.6vw;
+        font-size: 1.8rem;
     }
     .cta-button {
         width: 280px;
-        font-size: 1.4vw;
+        font-size: 1.8rem;
     }
+    .brandIntro,
+    .franchiseIntro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
 @media screen and (max-width: 710px) {
     .section-title {
-        font-size: 4vw;
+        font-size: 3.2rem;
     }
     .section-subtitle {
-        font-size: 2.6vw;
+        font-size: 1.6rem;
      }
     .cta-button {
         width: 240px;
-        font-size: 2.4vw;
+        font-size: 1.6rem;
     }
 }
 
@@ -96,7 +102,7 @@
     color: var(--white);
 }
 #slideList li p {
-    margin:0;
+    margin-top: 50px;
 }
 
 /* Slide Video */
@@ -111,7 +117,6 @@
 
 /* Navigation Buttons */
 #goBtn {
-    height: 60px;
     display: flex;
     justify-content: start;
     gap: 40px;
@@ -162,7 +167,7 @@
     background: var(--white);
 }
 #btnBarBg {
-    width: 16vw;
+    width: 250px;
     height: 3px;
     background: #ffa5a5c0;
 }
@@ -187,35 +192,48 @@
 /* Slider media query */
 @media screen and (max-width: 1280px) {
     #slider {
-        height: 80vh;
+        height: 800px;
         width: 100%;
         border-radius: 0;
     }
     #slideList li {
-        height: 80vh;
-        padding: 50px 40px 0;
+        padding: 50px 0 0;
+        height: 800px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
     }
-    #slideList li video {
+    .sliderText{
         width: 100%;
-        top: 32vh;
+        margin-left: 40px;
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    
+    #slideList li p { margin-top: 20px; }
+
+    #slideList li video {
+        margin-top: 20px;
+        position: relative;
+        width: 100%;
+        grid-area: 3 / 1 / 4 / 4;
     }
     #goBtn {
-        position:absolute;
-        right: 40px;
+        position:relative;
         flex-direction: column;
+        align-items: end;
+        margin-right: 40px;
+        grid-area: 1 / 3 / 2 / 4;
+        gap: 20px;
     }
     #goBtn a {
-        width: 25vw;
         height: 80px;
         line-height: 80px;
-        font-size: 1.4vw;
+        font-size: 1.8rem;
     }
     #pagination {
-        padding-left: 40px;
-        bottom: 51vh;
-    }
-    #btnBarBg {
-        width: 30vw;
+        bottom: 20px;
     }
 }
 
@@ -224,27 +242,26 @@
         margin: 60px auto 0;
     }
     #slideList li {
-        gap: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .sliderText{
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    #slideList li video {
+        margin-top: 40px;
+        grid-area: 3 / 1 / 4 / 4;
     }
     #goBtn {
-        position:initial;
+        margin: 20px 0 0 40px;
+        grid-area: 2 / 1 / 3 / 3;
         flex-direction: row;
     }
     #goBtn a {
-        width: 25vw;
-        font-size: 2.4vw;
-        height: 60px;
-        line-height: 60px;
-    }
-    #pagination {
-        bottom: 50vh;
-    }
-    #pageNum {
-        margin-top: 2px;
         font-size: 1.8rem;
-    }
-    #btnBarBg {
-        width: 40vw;
+        height: 50px;
+        line-height: 50px;
     }
 }
 
@@ -276,8 +293,6 @@
 
 #menuList li figure figcaption {
     margin-top: 40px;
-    font-family: 'S-CoreDream-4Regular';
-    font-size: 1.2vw;
     text-align: center;
 }
 
@@ -336,6 +351,9 @@
 #brandList li.brand4 { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/brand04.png); }
 
 @media screen and (max-width: 1280px) {
+    #brand {
+        margin-top: 160px;
+    }
     #brandList li {
         width: 48%;
         height: 460px;
@@ -455,6 +473,9 @@
     color: var(--white);
 }
 @media screen and (max-width: 1280px) {
+    #franchise {
+        margin-top: 160px;
+    }
     #characterLogo {display: none;}
     #faq {
         width: 100%;
@@ -533,78 +554,3 @@
         width: 60vw;
     }
 }
-/* ==================
-    Media Queries
-   ================== */
-
-/* Tablet (711px - 1280px) */
-/* @media screen and (max-width: 1280px) {
-    
-    #slider {
-        height: 80vh;
-    }
-    
-    #slideList li {
-        height: 660px;
-        padding: 60px 40px 0 40px;
-    }
-    
-    #brandList li {
-        width: 48%;
-        height: 460px;
-    }
-} */
-
-/* Mobile (710px and below)
-@media screen and (max-width: 710px) {
-    
-    #slider {
-        margin: 60px auto 0;
-        width: 100%;
-        height: 80vh;
-        border-radius: 0;
-    }
-    
-    #slideList li {
-        padding: 60px 20px 0 20px;
-        height: 80vh;
-        flex-wrap: nowrap;
-    }
-    
-    #slideList li strong { 
-        width: 100%;
-    }
-    
-    #slideList li p {
-        width: 100%;
-    }
-    
-    #slideList li video {
-        position: relative;
-        top: 0;
-        order: 2;
-    }
-    
-    #goBtn {
-        display: flex;
-        gap: 20px;
-    }
-    
-    #goBtn a {
-        width: 150px;
-        height: 50px;
-        line-height: 50px;
-    }
-    
-    #pagination {
-        padding-left: 20px;
-        top: 340px;
-    }
-    
-    #btnBarBg { width: 160px; }
-    
-    #brandList li {
-        width: 100%;
-        height: 300px;
-    }
-} */
