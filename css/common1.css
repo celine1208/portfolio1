@@ -79,6 +79,16 @@ body {
     background: #fff9;
 }
 
+#header::before {
+    content: '';
+    position: absolute;
+    top: 225px;
+    right:4vw;
+    width: 150px;
+    height: 180px;
+    background: url(../images/character1.png) repeat-x center / 100%;
+}
+
 /* Logo */
 #header h1 {
     position: absolute;
@@ -88,12 +98,11 @@ body {
     white-space: nowrap;
     overflow: hidden;
 }
-
 #header h1 a {
     display: block;
     width: 132px;
     height: 48px;
-    background: url(../images/gcova_logo.png) no-repeat center / cover;
+    background: url(../images/logo7.png) no-repeat center / cover;
 }
 
 /* Navigation */
