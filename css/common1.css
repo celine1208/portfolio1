@@ -265,6 +265,9 @@ body {
     #gnb {
         height: 770px;
     }
+    #gnbList {
+        margin-top: 60px;
+    }
     
     #gnbList > li {
         margin-bottom: 20px;

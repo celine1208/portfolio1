@@ -233,7 +233,7 @@
         font-size: 1.8rem;
     }
     #pagination {
-        bottom: 20px;
+        top: 330px;
     }
 }
 
@@ -539,11 +539,12 @@
         background: none;
     }
     #faq dl {
+        width:60%;
         top:0;
         left: 50%;
         transform: translateX(-50%);
         gap:30px;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     #faq dl dt,
     #faq dl dd {
