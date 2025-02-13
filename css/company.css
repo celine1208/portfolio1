@@ -1,0 +1,203 @@
+/* Common */
+#companyIntro {
+    margin: 100px auto 0;
+    width: 100%;
+}
+
+.intro-section {
+    margin: 0 auto;
+    padding: 120px 0;
+    width: 92%;
+}
+
+/* Intro Title Section */
+#introTitle {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.3)), url('../images/companyBg1.jpg') no-repeat center / cover;
+    color: #fff;
+}
+
+#introTitle p {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+#introTitle.visible p {
+    opacity: 1;
+}
+
+/* Core Values Section */
+#coreValues {
+    background: #fff;
+}
+
+.values-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.value-item {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+}
+
+.value-item:hover {
+    background-color: var(--primary);
+}
+
+.value-item h3 {
+    position: relative;
+    font-family: 'JalnanGothic';
+    font-size: 2.8rem;
+    margin-bottom: 24px;
+}
+.value-item:hover h3 {
+    color: var(--white);
+}
+
+.value-item p {
+    position: relative;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.5s linear,
+}
+
+.value-item:hover p {
+    opacity: 1;
+    color: var(--white);
+}
+
+
+/* History Timeline Section */
+
+.timeline-grid {
+    position: relative;
+    margin-top: 80px;
+    padding-left: 2px;
+}
+
+.timeline-grid::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 0;
+    background: #000;
+    transition: height 1.5s ease;
+}
+
+.timeline-grid.visible::before {
+    height: 100%;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 120px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.5s;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.visible::before {
+    opacity: 1;
+}
+
+.year {
+    font-family: 'JalnanGothic';
+    font-size: 4rem;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.timeline-content p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1280px) {
+    .intro-section {
+        padding: 80px 0;
+    }
+    
+    #introTitle {
+        height: 500px;
+    }
+    
+    .values-grid {
+        gap: 16px;
+    }
+    
+    .value-item {
+        padding: 32px;
+    }
+    
+    .value-item h3 {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .intro-section {
+        padding: 60px 0;
+    }
+    
+    #introTitle {
+        height: 400px;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        padding-left: 40px;
+        margin-bottom: 80px;
+    }
+    
+    .year {
+        font-size: 3.2rem;
+    }
+    
+    .timeline-content p {
+        font-size: 1.6rem;
+    }
+}

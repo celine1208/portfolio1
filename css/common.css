@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+/* Reset css */
+html {
+    font-size: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+body, h1, h2, h3, ul, p, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+
+/* Variables */
+:root {
+    --primary: #B90B0B;
+    --secondary: #fafa96;
+    --bgColor: #ededed;
+    --white: #fff;
+}
+
+/* Font */
+body {
+    font-family: 'S-CoreDream-4Regular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Common Text Styles */
+.section-title {
+    font-family: 'JalnanGothic';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 4.8rem;
+}
+
+.section-subtitle {
+    margin-top: 12px;
+    font-family: 'S-CoreDream-3Light';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+/* PageUp Button */
+#pageTop {
+    z-index: 999;
+    position: fixed;
+    bottom: 100px; /* Moved from desktop media query to default */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: url(../images/pageup.png) no-repeat center /cover;
+    text-indent: -1000%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* ========== Header ========== */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 5px 10px #00000033;
+}
+/* divider */
+#header::after {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff9;
+}
+/* character */
+#header::before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: calc(100% - 100px);
+    background: url(../images/character2.png) no-repeat right 100px bottom / 200px;
+}
+
+/* Logo */
+#header h1 {
+    position: absolute;
+    top: 20px;
+    left: 4vw;
+    text-indent: -1000%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#header h1 a {
+    display: block;
+    width: 132px;
+    height: 48px;
+    background: url(../images/logo1.png) no-repeat center / cover;
+}
+
+/* Navigation */
+#gnb {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+#gnbList {
+    display: flex;
+    text-align: center;
+    gap: 80px;
+}
+
+#gnbList > li > a {
+    position: relative;
+    width: 100%;
+    margin: 40px 0;
+    display: block;
+    font-size: 1.8rem;
+}
+
+#gnbList > li > a::before {
+    position: absolute;
+    top: 59px;
+    left: 50%;
+    translate: -50%;
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--primary);
+    transition: 0.3s;
+}
+
+#gnbList > li:hover a::before {
+    width: 100%;
+}
+
+/* Sub Navigation */
+#gnbList li .snb {
+    margin-top: 80px;
+    background: transparent;
+}
+
+#gnbList li .snb  li  a {
+    display: block;
+    font-size: 1.7rem;
+    line-height: 40px;
+    transition: 0.3s;
+}
+
+/* ========== Active States ========== */
+#header.active #gnbList .snb li:hover a {
+    color: var(--secondary);
+}
+#header.active {
+    background: var(--primary);
+}
+#header.active #gnbList li a {
+    color: var(--white);
+}
+#header.active #gnb a.mobileBtn {
+    filter: invert(1);
+}
+#header.active #gnbList > li > a::before {
+    background: var(--secondary);
+}
+
+/* ========== Mobile Nav Buttons ========== */
+#gnb a.mobileBtn, #gnb a.mobileClose {
+    display: none;
+}
+
+/* Tablet Media Query (711px - 1280px) */
+@media screen and (max-width: 1280px) {
+
+    #header h1 {
+        top: 30px;
+    }
+    #header h1 a {
+        width: 90px;
+        height: 32px;
+    }
+    #gnbList {
+        margin-top: 120px;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    #gnbList > li {
+        margin: 40px 0;
+        width: 100%;
+        text-align: center;
+    }
+    #gnbList > li > a {
+        margin: 0;
+    }
+    #gnbList > li > a::before {
+        top: 40px;
+    }
+
+    /* Sub Navigation */
+    #gnbList li .snb {
+        display: none;
+        margin-top: 40px;
+    }
+
+    #gnbList li .snb li a {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    /* Mobile Navigation Buttons */
+    #gnb a.mobileBtn {
+        z-index: 99;
+        position: absolute;
+        top: 34px;
+        right: 4vw;
+        display: block;
+        width: 25px;
+        height: 25px;
+        text-indent: -1000%;
+        white-space: nowrap;
+        overflow: hidden;
+        background: url(../images/mobileBtn.png) no-repeat center / cover;
+    }
+    
+    #gnb a.mobileClose {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(../images/close.png) no-repeat center /cover;
+    }
+}
+
+/* Mobile Media Query (710px and below) */
+@media screen and (max-width: 710px) {
+    #pageTop {
+        bottom: 20px;
+    }
+    
+    #header {
+        height: 60px;
+    }
+    /* divider */
+    #header::after {
+        top: 60px;
+    }
+    /* character */
+    #header::before {
+        background-size: 120px;
+        background-position-x: right;
+    }
+    /* logo */
+    #header h1 {
+        top: 15px;
+    }
+    /* Navigation */
+    #gnb {
+        height: 770px;
+    }
+    #gnbList {
+        margin-top: 60px;
+    }
+    
+    #gnbList > li {
+        margin-bottom: 20px;
+    }
+    
+    #gnbList > li > a {
+        font-size: 2rem;
+    }
+    
+    #gnbList > li > a::before {
+        top: 40px;
+    }
+
+    #gnbList > li:active a::before {
+        width: 100%;
+    }
+    
+    #gnbList li .snb {
+        margin-top: 20px;
+    }
+    
+    #gnbList li .snb > li > a {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    #gnb a.mobileBtn {
+    top: 18px;
+    }
+}
+
+/* Footer */
+#footer {
+    padding: 0 12vw;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.8)), url(../images/locationBg.png) repeat-x bottom / 1920px;
+}
+
+#footer p,
+#footer a {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#footer .companyInfo {
+    display: flex;
+    flex-direction: row; /* Changed to row by default */
+}
+
+#footer .companyInfo p:not(:last-child) {
+    padding-right: 40px;
+}
+
+#footer .info a:not(:first-child) {
+    padding-left: 20px;
+}
+
+#footer .info a:not(:last-child) {
+    padding-right: 20px;
+    border-right: 1px solid #fff;
+}
+
+/* Large Screen Footer Adjustment */
+@media screen and (min-width: 1921px) {
+    #footer {
+        background-size: 100%;
+    }
+}
+
+/* Mobile Footer Adjustment */
+@media screen and (max-width: 710px) {
+    #footer .companyInfo {
+        flex-direction: column;
+    }
+}
