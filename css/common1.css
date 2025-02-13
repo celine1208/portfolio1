@@ -82,11 +82,10 @@ body {
 #header::before {
     content: '';
     position: absolute;
-    top: 280px;
-    right: 4vw;
-    width: 100px;
-    height: 120px;
-    background: url(../images/character1.png) repeat-x center / 100%;
+    top: 100px;
+    width: 100%;
+    height: calc(100% - 100px);
+    background: url(../images/character2.png) no-repeat right 100px bottom / 200px;
 }
 
 /* Logo */
@@ -255,7 +254,8 @@ body {
     }
     /* character */
     #header::before {
-        top: 600px;
+        background-size: 120px;
+        background-position-x: right;
     }
     /* logo */
     #header h1 {

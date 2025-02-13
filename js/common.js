@@ -10,6 +10,7 @@ function resizeHandler () {
     if (window.innerWidth < 1280) {
         $('#header').addClass('active')
         $('#header').height(100);
+        $('#gnb a.mobileBtn').removeClass('mobileClose').addClass('mobileBtn');
         if(window.innerWidth <= 710){
         $('#header').height(60);
     }
@@ -23,22 +24,24 @@ function resizeHandler () {
         }
     }
 }
+function logoHandler () {
+    $('#header h1 a').css({ backgroundImage: 'url(../images/logo2.png)'})
+}
 
 // 네비바 마우스 오버 이벤트
-$('#gnb').on('mouseenter', function () {
+$('#header').on('mouseenter', function () {
     if (window.innerWidth > 1280) {
-        $('#header').stop().animate({ height: 400 }, 500);
-        $('#header').addClass('active');
-        $('#header h1 a').css({ backgroundImage: 'url(../images/logo2.png)'})
+        $(this).stop().animate({ height: 400 }, 500);
+        $(this).addClass('active');
+        logoHandler();
     }
 });
 
-$('#gnb').on('mouseleave', function () {
+$('#header').on('mouseleave', function () {
     if (window.innerWidth > 1280) {
-        $('#header').stop().animate({ height: 100 }, 500);
+        $(this).stop().animate({ height: 100 }, 500);
         $('body').css({ overflow: 'visible' });
-        $('#header h1 a').css({ backgroundImage: 'url(../images/logo1.png)'})
-
+        logoHandler();
         gnbHandler();
     }
 });
@@ -47,7 +50,7 @@ $('#gnb').on('mouseleave', function () {
 $(window).on('scroll', function(){
     if(window.innerWidth > 1280){
         $('#header').addClass('active');
-        $('#header h1 a').css({ backgroundImage: 'url(../images/logo2.png)'})
+        logoHandler();
         gnbHandler();
     }
 })
@@ -64,7 +67,7 @@ $('#gnb a.mobileBtn').on('click', function (e) {
     e.preventDefault();
     $('.snb').hide();
     if(window.innerWidth < 1280){
-        $(this).toggleClass('mobilebtn mobileClose');
+        $(this).toggleClass('mobileClose');
         if ($(this).hasClass('mobileClose')) {
             $('#header').stop().animate({ height: '100vh' }, 500);
             $('#pageTop').hide();
