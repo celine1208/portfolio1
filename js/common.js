@@ -17,6 +17,10 @@ function resizeHandler () {
         if (!$('#gnb a.mobileBtn').hasClass('mobileClose')) {
             $('#header').height(100);
         }
+        $('.snb').show();
+        if(window.scrollY === 0){
+            $('#header').removeClass('active');
+        }
     }
 }
 

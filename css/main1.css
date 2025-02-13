@@ -214,7 +214,7 @@
     #slideList li p { margin-top: 20px; }
 
     #slideList li video {
-        margin-top: 20px;
+        margin-top: 50px;
         position: relative;
         width: 100%;
         grid-area: 3 / 1 / 4 / 4;
@@ -413,7 +413,7 @@
     font-family: 'KCCHyerim-Regular';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.4vw;
+    font-size: 48px;
 }
 #characterLogo div {
     position: absolute;
@@ -443,7 +443,7 @@
     transition: 0.5s linear bottom;
     position: absolute;
     bottom: -1200px;
-    right: 4vw;
+    right: 0;
     width: 770px;
     height: 1600px;
     background: url(../images/iphone.png) no-repeat center / cover;
@@ -458,10 +458,14 @@
 #faq dl {
     position: absolute;
     top: 160px;
-    left: 85px;
+    left: 0;
     width: 600px;
     height: 1000px;
     font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 }
 /* 창업방법 아이폰 내부텍스트 공통 */
 #faq dl dt,
@@ -475,28 +479,36 @@
 }
 /* 창업방법 아이폰 내부텍스트 질문 */
 #faq dl dt {
-    margin-bottom: 150px;
+    margin-left: 40px;
     white-space: nowrap;
 }
 /* 창업방법 아이폰 내부텍스트 답변 */
 #faq dl dd {
-    margin-top: -115px;
-    position: absolute;
-    right: 0;
-    margin-bottom: 40px;
+    margin-left: 300px;
     background: var(--primary);
     color: var(--white);
 }
+
+@media screen and (max-width: 1350px){
+    #faq {
+        width: 722px;
+        height: 1500px;
+    }
+    #faq dl dd {
+        margin-left: 200px;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     #franchise {
         margin-top: 160px;
     }
-    #characterLogo {display: none;}
+    #characterLogo { display: none; }
     #faq {
-        width: 100%;
-        left:0;
-        top:0;
-        background: none;
+        width: 670px;
+        height: 1392px;
+        left:50%;
+        transform: translateX(-50%);
     }
     #characterLogo span,
     #characterLogo p {
@@ -504,24 +516,38 @@
     }
 
     #faq dl {
-        width: 100%;
-        top:200px;
+        width: 80%;
+        top:140px;
         left:0;
         height: 600px;
+        gap: 10px
     }
     #faq dl dt,
     #faq dl dd {
     height: 60px;
     line-height: 60px;
     }
+    #faq dl dt{
+        margin-left: 0;
+    }
+    #faq dl dd {
+        margin-left: 260px;
+    }
 }
 @media screen and (max-width: 710px) {
+    #faq {
+        background: none;
+    }
     #faq dl {
-        font-size: 1.4rem;
+        top:0;
+        left: 50%;
+        transform: translateX(-50%);
+        gap:30px;
+        font-size: 1.6rem;
     }
     #faq dl dt,
     #faq dl dd {
-        width: 90%;
+     margin: 0 auto;
     }
 }
 
