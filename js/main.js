@@ -1,4 +1,3 @@
-
 // 슬라이드
 let slideLength = $("#slideList li").length;
 let num = 0;
@@ -120,13 +119,11 @@ $slider.on('mousedown', function(e) {
   startX = e.pageX - $slider.offset().left;
   scrollLeft = $slider.scrollLeft();
 });
-
 $('document').on('mouseleave mouseup', function() {
   if (isDown) {
     isDown = false;
   }
 });
-
 $slider.on('mousemove', function(e) {
   if (!isDown) return;
   e.preventDefault();
@@ -134,3 +131,128 @@ $slider.on('mousemove', function(e) {
   const walk = x - startX;
   $slider.scrollLeft(scrollLeft - walk);
 });
+
+
+//  Swiper
+    var $menuList = $('#menuList');
+    var $slides = $('#menuList li');
+    var slideCount = $slides.length;
+    var currentIndex = 0;
+    var touchStartX = 0;
+    var touchMoveX = 0;
+    var isDragging = false;
+    var startLeft = 0;
+
+    // 1280 미만일 때, 무한 슬라이드를 위한 복제
+    if ($(window).width() < 1280) {
+        $menuList.append($slides.first().clone());
+        $menuList.prepend($slides.last().clone());
+    }
+
+    $slides = $('#menuList li')
+    
+    // 슬라이드 초기화
+    function initSlidePosition() {
+        var windowWidth = $(window).width();
+        $slides.width(windowWidth);
+        $menuList.css('left', -windowWidth);
+    }
+    
+    // 반응형 처리
+    function handleResponsive() {
+        var windowWidth = $(window).width();
+        $slides.width(windowWidth);
+        
+        // 710px 이하에서만 페이지네이션 표시
+        if(windowWidth <= 710) {
+            $('.swiper-pagination').show();
+        } else {
+            $('.swiper-pagination').hide();
+        }
+        initSlidePosition();
+    }
+    
+    // 슬라이드 이동
+    function moveSlide(index, animation = true) {
+        var windowWidth = $(window).width();
+        var moveX = -(windowWidth * (index + 1));
+        
+        if (animation) {
+            $menuList.stop().animate({
+                left: moveX
+            }, 300, function() {
+                // 무한 슬라이드 처리
+                if(index >= slideCount) {
+                    currentIndex = 0;
+                    $menuList.css('left', -windowWidth);
+                } else if(index < 0) {
+                    currentIndex = slideCount - 1;
+                    $menuList.css('left', -(windowWidth * slideCount));
+                } else {
+                    currentIndex = index;
+                }
+                updateDots();
+            });
+        } else {
+            $menuList.css('left', moveX);
+        }
+    }
+    
+    // 터치 이벤트 처리
+    $menuList.on('touchstart mousedown', function(e) {
+        isDragging = true;
+        touchStartX = e.type === 'touchstart' ? e.originalEvent.touches[0].pageX : e.pageX;
+        startLeft = parseInt($menuList.css('left'));
+        
+        return false; // 기본 이벤트 방지
+    });
+    
+    $(document).on('touchmove mousemove', function(e) {
+        if (!isDragging) return;
+        touchMoveX = e.type === 'touchmove' ? e.originalEvent.touches[0].pageX : e.pageX;
+        var diff = touchMoveX - touchStartX;
+        $menuList.css('left', startLeft + diff);
+        return false; // 기본 이벤트 방지
+    });
+    
+    $(document).on('touchend mouseup', function(e) {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        var windowWidth = $(window).width();
+        var moveX = touchMoveX - touchStartX;
+        
+        if (Math.abs(moveX) > windowWidth / 4) { // 25% 이상 드래그 시 슬라이드 전환
+            if (moveX > 0) {
+                moveSlide(currentIndex - 1);
+            } else {
+                moveSlide(currentIndex + 1);
+            }
+        } else {
+            moveSlide(currentIndex); // 원위치
+        }
+    });
+    
+    // 네비게이션 버튼 생성 및 이벤트 바인딩
+    $('#menu').append(
+        '<button class="swiper-button-prev">&lt;</button>' +
+        '<button class="swiper-button-next">&gt;</button>'
+    );
+    
+    $('.swiper-button-next').click(function() {
+        moveSlide(currentIndex + 1);
+    });
+    
+    $('.swiper-button-prev').click(function() {
+        moveSlide(currentIndex - 1);
+    });
+    
+    // 윈도우 리사이즈 이벤트
+    $(window).resize(function() {
+        handleResponsive();
+        moveSlide(currentIndex, false); // 애니메이션 없이 위치 조정
+    });
+    
+    // 초기화
+    handleResponsive();
+    updateDots();

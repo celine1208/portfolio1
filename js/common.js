@@ -1,6 +1,6 @@
 function gnbHandler () {
     if (window.scrollY === 0) {
-        $('#header h1 a').css({ backgroundImage: 'url(../images/logo1.png)'})
+        $('#header h1 a').css({ backgroundImage: 'url(./images/logo1.png)'})
         $('#header').removeClass('active')
                     .height(100);
     }
@@ -25,21 +25,21 @@ function resizeHandler () {
     }
 }
 function logoHandler () {
-    $('#header h1 a').css({ backgroundImage: 'url(../images/logo2.png)'})
+    $('#header h1 a').css({ backgroundImage: 'url(./images/logo2.png)'})
 }
 
 // 네비바 마우스 오버 이벤트
-$('#header').on('mouseenter', function () {
+$('#gnb').on('mouseenter', function () {
     if (window.innerWidth > 1280) {
-        $(this).stop().animate({ height: 400 }, 500);
-        $(this).addClass('active');
+        $('#header').stop().animate({ height: 400 }, 500);
+        $('#header').addClass('active');
         logoHandler();
     }
 });
 
 $('#header').on('mouseleave', function () {
     if (window.innerWidth > 1280) {
-        $(this).stop().animate({ height: 100 }, 500);
+        $('#header').stop().animate({ height: 100 }, 500);
         $('body').css({ overflow: 'visible' });
         logoHandler();
         gnbHandler();
