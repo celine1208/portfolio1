@@ -191,7 +191,6 @@ $slider.on('mousemove', function(e) {
                 } else {
                     currentIndex = index;
                 }
-                updateDots();
             });
         } else {
             $menuList.css('left', moveX);
@@ -222,7 +221,7 @@ $slider.on('mousemove', function(e) {
         var windowWidth = $(window).width();
         var moveX = touchMoveX - touchStartX;
         
-        if (Math.abs(moveX) > windowWidth / 4) { // 25% 이상 드래그 시 슬라이드 전환
+        if (Math.abs(moveX) > windowWidth / 4) {
             if (moveX > 0) {
                 moveSlide(currentIndex - 1);
             } else {
@@ -255,4 +254,3 @@ $slider.on('mousemove', function(e) {
     
     // 초기화
     handleResponsive();
-    updateDots();
