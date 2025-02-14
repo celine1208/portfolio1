@@ -204,6 +204,7 @@ body {
     #header h1 a {
         width: 90px;
         height: 32px;
+        background-image: url(../images/logo2.png);
     }
     #gnbList {
         margin-top: 120px;
