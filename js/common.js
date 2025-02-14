@@ -8,6 +8,7 @@ function gnbHandler () {
 
 function resizeHandler () {
     if (window.innerWidth < 1280) {
+        $('#header h1 a').css({ backgroundImage: 'url(./images/logo2.png)'})
         $('#header').addClass('active')
         $('#header').height(100);
         $('#gnb a.mobileBtn').removeClass('mobileClose').addClass('mobileBtn');
@@ -15,6 +16,9 @@ function resizeHandler () {
         $('#header').height(60);
     }
     } else {
+        if(scrollY === 0){
+            $('#header h1 a').css({ backgroundImage: 'url(./images/logo1.png)'})
+        }
         if (!$('#gnb a.mobileBtn').hasClass('mobileClose')) {
             $('#header').height(100);
         }
