@@ -585,24 +585,36 @@
     .franchiseInner {
         width: 100%;
     }
-    #characterLogo { display: none; }
+    /* #characterLogo { display: none; } */
     #faq {
         scale: 0.8;
         left: 50%;
-        transform: translateX(-50%) translateY(280px);
+        transform: translateX(-50%) translateY(340px);
         transform-origin: left top;
+    }
+    #characterLogo {
+        background: none;
     }
     #characterLogo span,
     #characterLogo p {
         display: none;
     }
 
+
+    #characterLogo a {
+        position:absolute;
+        top: -160px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+    }
+
     #faq dl {
         width: 80%;
         top:140px;
-        left:0;
+        left:20px;
         height: 600px;
-        gap: 40px
+        gap: 20px
     }
     #faq dl dt,
     #faq dl dd {
@@ -622,7 +634,7 @@
     }
     #faq dl {
         width:60%;
-        top:0;
+        top:40px;
         left: 50%;
         transform: translateX(-50%);
         gap:30px;
